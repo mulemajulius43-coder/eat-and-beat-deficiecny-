@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eat & Beat Deficiency - Health awareness platform by Sanga Secondary School Science Club. Learn about clinical nutrition, deficiency diseases, and evidence-based food protocols.">
+    <meta name="keywords" content="nutrition, deficiency diseases, diabetes, goiter, osteoporosis, anemia, scurvy, clinical nutrition, Sanga Secondary School">
+    <meta name="author" content="Sanga Secondary School Science Club">
+    <title>Eat & Beat Deficiency | Sanga Secondary Science Club</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================================
+                   CSS RESET & BASE
+                ======================================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1C6E4F;
+            --primary-light: #2C9B72;
+            --primary-dark: #0f3d2c;
+            --secondary: #f6b83e;
+            --bg: #eef2f8;
+            --shadow-dark: rgba(156, 170, 190, 0.4);
+            --shadow-light: rgba(255, 255, 255, 0.7);
+            --text-dark: #1a2a2a;
+            --text-light: #f0f9ff;
+            --radius: 32px;
+            --radius-sm: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            background-image: radial-gradient(circle at 15% 30%, rgba(210, 225, 245, 0.5), rgba(230, 240, 250, 0.8));
+            min-height: 100vh;
+            padding: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+                   NEUMORPHIC UTILITY CLASSES
+                ======================================== */
+        .neumorph {
+            background: var(--bg);
+            border-radius: var(--radius);
+            box-shadow: 12px 12px 24px var(--shadow-dark),
+                -8px -8px 18px var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .neumorph:hover {
+            box-shadow: 16px 16px 32px var(--shadow-dark),
+                -10px -10px 24px var(--shadow-light);
+        }
+
+        .neumorph-card {
+            background: var(--bg);
+            border-radius: var(--radius);
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+            padding: 1.8rem;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+        }
+
+        .neumorph-inset {
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+            padding: 1.2rem;
+        }
+
+        .neumorph-btn {
+            background: var(--bg);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 48px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+            cursor: pointer;
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                -4px -4px 10px var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .neumorph-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 10px 10px 20px var(--shadow-dark),
+                -6px -6px 14px var(--shadow-light);
+        }
+
+        .neumorph-btn:active {
+            transform: translateY(0px);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+        }
+
+        /* ========================================
+                   LAYOUT
+                ======================================== */
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* ========================================
+                   HEADER
+                ======================================== */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08),
+                -3px -3px 8px white;
+            background: #ffffff;
+            padding: 4px;
+            border: 2px solid var(--primary-light);
+        }
+
+        .brand-title {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .main-heading i {
+            -webkit-text-fill-color: initial;
+            color: var(--primary);
+        }
+
+        .nonprofit-label {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-top: 0.2rem;
+            opacity: 0.8;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-right .fa-leaf {
+            font-size: 2rem;
+            color: var(--primary-light);
+            animation: pulse-leaf 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-leaf {
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(10deg);
+            }
+        }
+
+        /* ========================================
+                   NAVIGATION
+                ======================================== */
+        .nav-wrapper {
+            margin-bottom: 2rem;
+            padding: 0.8rem 1.2rem;
+            overflow-x: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            min-width: max-content;
+        }
+
+        .nav-btn {
+            background: var(--bg);
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            box-shadow: 5px 5px 10px var(--shadow-dark),
+                -3px -3px 8px var(--shadow-light);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            color: var(--primary);
+        }
+
+        .nav-btn.active {
+            background: var(--bg);
+            box-shadow: inset 3px 3px 7px var(--shadow-dark),
+                inset -2px -2px 5px var(--shadow-light);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ========================================
+                   PAGES
+                ======================================== */
+        .page {
+            display: none;
+            animation: fadeSlide 0.35s ease forwards;
+        }
+
+        .page.active-page {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+                   WELCOME / HERO SECTION
+                ======================================== */
+        .welcome-sanga {
+            background: linear-gradient(145deg, #0f2b3d, #1b4b5e);
+            border-left: 12px solid var(--secondary);
+            border-radius: 48px 20px 20px 48px;
+            padding: 2.5rem 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 25px 40px -12px rgba(0, 20, 30, 0.6),
+                inset 0 2px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .welcome-sanga::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 160%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 215, 100, 0.12), transparent 70%);
+            pointer-events: none;
+            transform: rotate(-8deg);
+        }
+
+        .welcome-sanga::before {
+            content: "🔬";
+            font-size: 8rem;
+            position: absolute;
+            right: 5px;
+            bottom: -15px;
+            opacity: 0.1;
+            pointer-events: none;
+            transform: rotate(6deg);
+        }
+
+        .welcome-sanga h2 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f7d875, #fabc3b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -0.5px;
+        }
+
+        .welcome-sanga h2 i {
+            -webkit-text-fill-color: initial;
+            color: var(--secondary);
+        }
+
+        .welcome-sanga p {
+            font-size: 1.1rem;
+            color: #d4eaf5;
+            max-width: 85%;
+            position: relative;
+            z-index: 2;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .welcome-sanga .science-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: #0a1f2b;
+            padding: 0.5rem 2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 1.2rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 200, 0.2);
+            transition: var(--transition);
+        }
+
+        .welcome-sanga .science-badge:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .welcome-sanga .science-badge i {
+            margin-right: 8px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ========================================
+                   CLINICAL NUTRITION SECTION
+                ======================================== */
+        .clinical-header {
+            background: linear-gradient(135deg, #1e3a2f, var(--primary));
+            color: white;
+            border-radius: var(--radius);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0 2rem;
+            text-align: center;
+        }
+
+        .clinical-header h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .clinical-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .core-grid,
+        .nutrition-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .core-card,
+        .cat-card {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 1.8rem;
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05),
+                -4px -4px 8px rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .core-card:hover,
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.08),
+                -6px -6px 12px rgba(255, 255, 255, 0.9);
+        }
+
+        .core-card .icon-large,
+        .cat-card .icon-large {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .core-card h4,
+        .cat-card h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .core-card h3,
+        .cat-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .core-card p,
+        .cat-card p {
+            color: #4a5a5a;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            padding: 0.8rem 1.5rem;
+            margin: 1.5rem 0 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        /* ========================================
+                   DISEASE CARDS
+                ======================================== */
+        .disease-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .disease-card {
+            border-radius: var(--radius);
+            padding: 1.8rem;
+            transition: var(--transition);
+            border-left: 6px solid var(--primary-light);
+            background: white;
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05),
+                -4px -4px 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .disease-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .disease-card .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            background: #dce3ec;
+        }
+
+        .disease-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .disease-card .food-list {
+            list-style: none;
+            margin: 0.8rem 0;
+        }
+
+        .disease-card .food-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .disease-card .food-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f5f7fc;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .supplement-tag {
+            background: #deefe8;
+            border-radius: 24px;
+            padding: 0.5rem 1.2rem;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .supplement-tag i {
+            margin-right: 6px;
+            color: var(--primary);
+        }
+
+        .attack-badge {
+            background: #ffefe5;
+            border-radius: 40px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            display: inline-block;
+            font-weight: 500;
+            color: #aa6f3c;
+        }
+
+        .attack-badge i {
+            margin-right: 6px;
+        }
+
+        /* Disease-specific colors */
+        .disease-goiter {
+            border-left-color: #e67e22;
+        }
+        .disease-osteo {
+            border-left-color: #2c7da0;
+        }
+        .disease-anemia {
+            border-left-color: #c44536;
+        }
+        .disease-scurvy {
+            border-left-color: #e9b35f;
+        }
+        .disease-diabetes {
+            border-left-color: #8e44ad;
+        }
+        .disease-rickets {
+            border-left-color: #2ecc71;
+        }
+        .disease-obesity {
+            border-left-color: #e74c3c;
+        }
+
+        /* ========================================
+                   DISEASE DETAIL PAGES
+                ======================================== */
+        .disease-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .disease-detail .content {
+            flex: 1.5;
+            min-width: 280px;
+        }
+
+        .disease-detail .image-side {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .disease-detail .image-side img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        /* ========================================
+                   RESOURCES PAGE
+                ======================================== */
+        .resource-card {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            align-items: center;
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .resource-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .resource-card .content h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .resource-card .content p {
+            color: #5a6a6a;
+            font-size: 0.95rem;
+        }
+
+        .resource-card .btn-download {
+            margin-left: auto;
+            padding: 0.5rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .resource-card .btn-download:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* ========================================
+                   CONTACT FORM
+                ======================================== */
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            margin: 0.6rem 0;
+            border: none;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            box-shadow: inset 4px 4px 8px #cbd6e4,
+                inset -3px -3px 6px white;
+            outline: none;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            box-shadow: inset 4px 4px 10px #b8c5d6,
+                inset -3px -3px 8px white;
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: block;
+            margin-top: 0.8rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            border-radius: 48px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 6px 6px 16px rgba(28, 110, 79, 0.3);
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 24px rgba(28, 110, 79, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0px);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info .info-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info .info-box i {
+            font-size: 2rem;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info .info-box h4 {
+            color: var(--primary-dark);
+        }
+
+        /* ========================================
+                   FOOTER
+                ======================================== */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--primary-dark);
+        }
+
+        footer .footer-address {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: var(--primary);
+            font-size: 1.4rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        footer .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--secondary);
+        }
+
+        footer .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 1rem auto;
+            border-radius: 10px;
+        }
+
+        /* ========================================
+                   RESPONSIVE DESIGN
+                ======================================== */
+        @media (max-width: 992px) {
+            .welcome-sanga {
+                padding: 2rem 1.8rem;
+                border-radius: 32px 12px 12px 32px;
+            }
+
+            .welcome-sanga h2 {
+                font-size: 1.8rem;
+            }
+
+            .welcome-sanga p {
+                max-width: 100%;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .logo-header {
+                padding: 0.8rem 1rem;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .logo-area {
+                justify-content: center;
+            }
+
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .main-heading {
+                font-size: 1.4rem;
+            }
+
+            .brand-title {
+                justify-content: center;
+            }
+
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+
+            .nav-links {
+                gap: 0.4rem;
+            }
+
+            .nav-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.7rem;
+            }
+
+            .welcome-sanga {
+                padding: 1.5rem 1rem;
+                border-radius: 24px 8px 8px 24px;
+                border-left-width: 6px;
+            }
+
+            .welcome-sanga h2 {
+                font-size: 1.4rem;
+            }
+
+            .welcome-sanga p {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+
+            .welcome-sanga .science-badge {
+                font-size: 0.75rem;
+                padding: 0.3rem 1.2rem;
+            }
+
+            .welcome-sanga::before {
+                font-size: 4rem;
+                right: 0px;
+                bottom: 0px;
+            }
+
+            .clinical-header {
+                padding: 1rem 1.2rem;
+            }
+
+            .clinical-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .core-grid,
+            .nutrition-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .disease-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .disease-detail {
+                flex-direction: column;
+            }
+
+            .neumorph-card {
+                padding: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .header-right .fa-leaf {
+                font-size: 1.4rem;
+            }
+
+            .nonprofit-label {
+                font-size: 0.55rem;
+            }
+
+            .hero-image {
+                max-height: 200px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .resource-card .btn-download {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-sanga h2 {
+                font-size: 1.2rem;
+            }
+
+            .welcome-sanga p {
+                font-size: 0.85rem;
+            }
+
+            .nav-btn {
+                font-size: 0.65rem;
+                padding: 0.35rem 0.8rem;
+            }
+
+            .disease-card .card-image {
+                height: 140px;
+            }
+        }
+
+        /* ========================================
+                   SCROLLBAR STYLING
+                ======================================== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            margin-right: 10px;
+        }
+    /* THREE BIG IMAGES (project makers prominently large) */
+    .big-makers-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0 1.5rem;
+    }
+    .big-maker-card {
+      background: #ffffffea;
+      border-radius: 48px;
+      padding: 1.2rem;
+      text-align: center;
+      width: 220px;
+      box-shadow: 12px 12px 24px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.7);
+      transition: transform 0.25s;
+    }
+    .big-maker-card:hover {
+      transform: translateY(-8px);
+    }
+    .big-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #2a7f62;
+      padding: 4px;
+      background: white;
+      margin-bottom: 1rem;
+    }
+    .maker-name {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #1f4e3f;
+    }
+    .maker-role {
+      font-size: 0.8rem;
+      color: #5b6e5c;
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- ========================================
+        HEADER
+        ======================================== -->
+        <header class="neumorph logo-header">
+            <div class="logo-area">
+                <img class="logo-img" src="Images/download (1) copy.jpg" alt="Eat & Beat Logo" loading="lazy">
+                <div class="logo-text">
+                    <div class="brand-title">
+                        <span class="main-heading">
+                            <i class="fas fa-apple-alt"></i> EAT &amp; BEAT DEFICIENCY
+                        </span>
+                        <span class="nonprofit-label">
+                            <i class="fas fa-hand-holding-heart"></i> Non-Profit
+                        </span>
+                    </div>
+                    <p>Eradicate nutrient deficiency &bull; Food &amp; Science United</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <i class="fas fa-leaf"></i>
+            </div>
+        </header>
+
+        <!-- ========================================
+        NAVIGATION
+        ======================================== -->
+        <nav class="neumorph nav-wrapper">
+            <div class="nav-links" id="navLinks">
+                <button class="nav-btn active" data-page="home"><i class="fas fa-home"></i> Home</button>
+                <button class="nav-btn" data-page="about"><i class="fas fa-info-circle"></i> About</button>
+                <button class="nav-btn" data-page="diabetes"><i class="fas fa-droplet"></i> Diabetes</button>
+                <button class="nav-btn" data-page="goiter"><i class="fas fa-thyroid"></i> Goiter</button>
+                <button class="nav-btn" data-page="osteoporosis"><i class="fas fa-bone"></i> Osteoporosis</button>
+                <button class="nav-btn" data-page="anemia"><i class="fas fa-tint"></i> Anemia</button>
+                <button class="nav-btn" data-page="scurvy"><i class="fas fa-vitamin-c"></i> Scurvy</button>
+                <button class="nav-btn" data-page="rickets"><i class="fas fa-baby"></i> Rickets</button>
+                <button class="nav-btn" data-page="obesity"><i class="fas fa-weight"></i> Obesity</button>
+                <button class="nav-btn" data-page="resources"><i class="fas fa-book"></i> Resources</button>
+                <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> Contact</button>
+            </div>
+        </nav>
+
+        <!-- ========================================
+        PAGE: HOME
+        ======================================== -->
+         <div style="background-color:#002980; padding:10px; border-radius:5px;">
+    <marquee>
+        <b style="color:white; font-size:24px;">
+           WELCOME TO SANGA SECONDARY SCHOOL SCIENCE CLUB
+        </b>
+    </marquee>
+</div>
+  <!--STUNNING MARQUEE CONTAINER-->
+  <div class="marquee-wrapper"> <div class="marquee-content"></div> </div>
+  <div id="page-home" class="page active-page">
+  <img src="Images/se ch.png" height="550" width="98%" alt="Description">
+
+            <div class="welcome-sanga">
+                <h2><i class="fas fa-flask"></i> WELCOME TO SANGA SECONDARY SCHOOL SCIENCE CLUB</h2>
+                <p>
+                    Innovating for a healthier future — we combine science, nutrition, and community action
+                    to eradicate nutrient deficiencies. Our club leads the <strong>"Eat &amp; Beat Deficiency"</strong>
+                    campaign, empowering students and locals with evidence-based food protocols for diabetes,
+                    goiter, osteoporosis, anemia, scurvy, rickets, obesity, and more.
+                </p>
+                <p>
+                    <em>Nutrition is the process of taking in, absorbing, and utilizing food and nourishing
+                    substances to support life.</em>
+                </p>
+                <div class="science-badge">
+                    <i class="fas fa-microscope"></i> Science in Action | Beat Deficiency
+                </div>
+            </div>
+
+            <!-- CLINICAL NUTRITION -->
+            <div class="clinical-header">
+                <h3><i class="fas fa-stethoscope"></i> Clinical Nutrition: Science of Healing Through Food</h3>
+                <p>Evidence-based nutritional therapy for disease prevention, management, and recovery</p>
+            </div>
+
+            <div class="neumorph-card">
+                <h4>📖 Definition of Clinical Nutrition</h4>
+                <p>
+                    Clinical nutrition is the branch of nutrition science that focuses on the diagnosis, treatment,
+                    and prevention of nutrition-related diseases through personalized dietary interventions,
+                    supplementation, and metabolic support. It bridges the gap between food science and clinical medicine.
+                </p>
+            </div>
+
+            <h4 class="neumorph-inset section-title">
+                <i class="fas fa-bullseye"></i> Core Areas of Focus
+            </h4>
+            <div class="core-grid">
+                <div class="core-card">
+                    <span class="icon-large"><i class="fas fa-stethoscope"></i></span>
+                    <h4>Malnutrition Assessment</h4>
+                    <p>Screen and diagnose nutrient deficiencies or overnutrition using advanced tools, anthropometry,
+                    and clinical testing (serum biomarkers, micronutrient panels).</p>
+                </div>
+                <div class="core-card">
+                    <span class="icon-large"><i class="fas fa-utensils"></i></span>
+                    <h4>Therapeutic Diets</h4>
+                    <p>Adjust dietary modifications, macro-distribution, and nutrient-dense variations to treat
+                    specific clinical conditions like diabetes, hypertension, and renal disease.</p>
+                </div>
+                <div class="core-card">
+                    <span class="icon-large"><i class="fas fa-syringe"></i></span>
+                    <h4>Nutrition Support</h4>
+                    <p>Deliver specialized artificial feeding methods (enteral/parenteral nutrition) when normal
+                    food consumption is impossible or insufficient.</p>
+                </div>
+            </div>
+
+            <!-- SICK PEOPLE -->
+            <h4 class="neumorph-inset section-title">
+                <i class="fas fa-hospital"></i> Clinical Nutrition for Sick Individuals (Therapeutic Categories)
+            </h4>
+            <div class="nutrition-categories">
+                <div class="cat-card">
+                    <h3>🩺 Metabolic Disorders</h3>
+                    <p><strong>Foods:</strong> Low-glycemic index, high-fiber, lean proteins</p>
+                    <p><strong>Importance:</strong> Stabilizes blood glucose in diabetes; reduces lipid profile</p>
+                    <p><strong>Examples:</strong> Whole grains, legumes, non-starchy vegetables</p>
+                </div>
+                <div class="cat-card">
+                    <h3>❤️ Cardiovascular Diseases</h3>
+                    <p><strong>Foods:</strong> Omega-3 rich fish, nuts, olive oil, oats</p>
+                    <p><strong>Importance:</strong> Lowers inflammation, reduces LDL cholesterol</p>
+                    <p><strong>Examples:</strong> Salmon, walnuts, avocado</p>
+                </div>
+                <div class="cat-card">
+                    <h3>🦴 Bone &amp; Joint Disorders</h3>
+                    <p><strong>Foods:</strong> Calcium-dense dairy, Vitamin D rich fish, collagen</p>
+                    <p><strong>Importance:</strong> Prevents osteoporosis, supports joint repair</p>
+                    <p><strong>Examples:</strong> Yogurt, sardines, bone broth</p>
+                </div>
+                <div class="cat-card">
+                    <h3>🩸 Anemia &amp; Blood Disorders</h3>
+                    <p><strong>Foods:</strong> Iron-rich red meat, spinach, fortified cereals + Vitamin C</p>
+                    <p><strong>Importance:</strong> Restores hemoglobin, improves oxygen transport</p>
+                    <p><strong>Examples:</strong> Liver, lentils, citrus fruits</p>
+                </div>
+            </div>
+
+            <!-- NON-SICK PEOPLE -->
+            <h4 class="neumorph-inset section-title">
+                <i class="fas fa-user-md"></i> Preventive Nutrition for Healthy Individuals (By Occupation)
+            </h4>
+            <div class="nutrition-categories">
+                <div class="cat-card">
+                    <h3>⚡ High Energy Work (Athletes, Laborers)</h3>
+                    <p><strong>Foods:</strong> Complex carbs, lean proteins, electrolytes</p>
+                    <p><strong>Importance:</strong> Sustains endurance, muscle repair, hydration</p>
+                    <p><strong>Examples:</strong> Brown rice, bananas, eggs, sweet potatoes</p>
+                </div>
+                <div class="cat-card">
+                    <h3>🧠 Brain-Intensive Work (Teachers, Students)</h3>
+                    <p><strong>Foods:</strong> Omega-3 fatty acids, antioxidants, B-vitamins</p>
+                    <p><strong>Importance:</strong> Enhances memory, focus, reduces mental fatigue</p>
+                    <p><strong>Examples:</strong> Fatty fish, blueberries, dark chocolate, nuts</p>
+                </div>
+                <div class="cat-card">
+                    <h3>🪑 Sedentary Work (Office Jobs)</h3>
+                    <p><strong>Foods:</strong> High-fiber, low-calorie density, anti-inflammatory</p>
+                    <p><strong>Importance:</strong> Prevents weight gain, metabolic syndrome, constipation</p>
+                    <p><strong>Examples:</strong> Leafy greens, quinoa, berries, green tea</p>
+                </div>
+            </div>
+
+            <!-- AGE-BASED NUTRITION -->
+            <h4 class="neumorph-inset section-title">
+                <i class="fas fa-users"></i> Age-Specific Macronutrient &amp; Micronutrient Guide
+            </h4>
+            <div class="core-grid">
+                <div class="core-card">
+                    <h4>🧒 Young (2-12 years)</h4>
+                    <p><strong>Macro:</strong> Carbs 50-60%, Protein 15-20%, Fat 25-30%</p>
+                    <p><strong>Micro:</strong> Calcium, Iron, Vitamin D, Zinc</p>
+                    <p><strong>Key Foods:</strong> Milk, eggs, whole grains, fruits</p>
+                </div>
+                <div class="core-card">
+                    <h4>🧑 Youth (13-35 years)</h4>
+                    <p><strong>Macro:</strong> Carbs 45-55%, Protein 20-25%, Fat 20-30%</p>
+                    <p><strong>Micro:</strong> B-complex, Magnesium, Omega-3, Iron</p>
+                    <p><strong>Key Foods:</strong> Lean meat, nuts, leafy greens, legumes</p>
+                </div>
+                <div class="core-card">
+                    <h4>👴 Old (60+ years)</h4>
+                    <p><strong>Macro:</strong> Carbs 40-50%, Protein 25-30%, Fat 20-25%</p>
+                    <p><strong>Micro:</strong> Calcium, Vitamin B12, Vitamin D, Fiber</p>
+                    <p><strong>Key Foods:</strong> Soft dairy, fish, fortified cereals, soups</p>
+                </div>
+            </div>
+
+            <!-- QUICK DISEASE OVERVIEW -->
+            <h4 class="neumorph-inset section-title">
+                <i class="fas fa-notes-medical"></i> Diseases We Address
+            </h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-droplet" style="font-size:2rem; color:#8e44ad;"></i>
+                    <p><strong>Diabetes</strong><br>Type 1, Type 2, Insipidus</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-thyroid" style="font-size:2rem; color:#e67e22;"></i>
+                    <p><strong>Goiter</strong><br>Iodine + Selenium</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-bone" style="font-size:2rem; color:#2c7da0;"></i>
+                    <p><strong>Osteoporosis</strong><br>Calcium, D3, K2</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-tint" style="font-size:2rem; color:#c44536;"></i>
+                    <p><strong>Anemia</strong><br>Iron + Vitamin C</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-vitamin-c" style="font-size:2rem; color:#e9b35f;"></i>
+                    <p><strong>Scurvy</strong><br>Vitamin C</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-baby" style="font-size:2rem; color:#2ecc71;"></i>
+                    <p><strong>Rickets</strong><br>Vitamin D + Calcium</p>
+                </div>
+                <div class="neumorph-inset" style="text-align:center; padding:1rem;">
+                    <i class="fas fa-weight" style="font-size:2rem; color:#e74c3c;"></i>
+                    <p><strong>Obesity</strong><br>Balanced Nutrition</p>
+                </div>
+            </div>
+
+            <div class="attack-badge" style="display:block; text-align:center;">
+                <i class="fas fa-biohazard"></i> How deficiencies attack: metabolic disruption, hormonal chaos,
+                bone fragility — reversed with targeted whole-food &amp; nutraceuticals.
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: ABOUT
+        ======================================== -->
+        <div id="page-about" class="page">
+            <div class="neumorph-card">
+                <h2><i class="fas fa-info-circle" style="color:var(--primary);"></i> About Eat &amp; Beat Deficiency</h2>
+               <i class="fas fa-seedling"></i> Project Champions · Eat & Beat Deficiency <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <!-- THREE VERY BIG IMAGES of project makers -->
+        <div class="big-makers-row">
+          <div class="big-maker-card">
+            <img class="big-img" src="ronald.png" alt="Dr. Sarah" onerror="this.src='https://picsum.photos/id/64/200/200'">
+            <div class="maker-name">Tr Musasire Ronald </div>
+            <div class="maker-role">Club Patron</div>
+          </div>
+          <div class="big-maker-card">
+            <img class="big-img" src="Images/Julius.png" alt="Mulema julius" onerror="this.src='https://picsum.photos/id/91/200/200'">
+            <div class="maker-name">Mulema julius</div>
+            <div class="maker-role">Graphic Designer</div>
+          </div>
+          <div class="big-maker-card">
+            <img class="big-img" src="Images/ismail.png" alt="Dr Ismail Mugisha" onerror="this.src='https://picsum.photos/id/29/200/200'">
+            <div class="maker-name">Aspired Dr. Ismail Mugisha</div>
+            <div class="maker-role">Scientist</div>
+          </div>  
+                <img src="Images/about us copy.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <img src="Images/a but me.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <img src="Images/MINE.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <p style="font-size:1.1rem; margin-bottom:1rem;">
+                    Many people suffer from diseases such as <strong>Goiter, Anemia, Osteoporosis, Scurvy, Rickets,
+                    Obesity, and Diabetes</strong> because of inadequate intake of essential nutrients. Through this project,
+                    we provide accurate scientific information, recommended foods, prevention strategies, and health
+                    awareness campaigns to help communities improve their well-being.
+                </p>
+
+                <div class="attack-badge" style="display:block; text-align:center; margin:1rem 0;">
+                    <i class="fas fa-biohazard"></i> How deficiencies attack: metabolic disruption, hormonal chaos,
+                    bone fragility — reversed with targeted whole-food &amp; nutraceuticals.
+                </div>
+
+                <p>
+                    Founded by clinical nutritionists and endocrinologists, our platform provides
+                    <strong>personalized dietary interventions</strong> for nutrient deficiency diseases.
+                    We merge ancestral wisdom and modern supplementation to eradicate goiter, diabetes complications,
+                    osteoporosis, anemia, scurvy, and more. Through community training and free nutritional toolkits,
+                    we've impacted over 30,000 lives since 2024.
+                </p>
+
+                <div class="neumorph-inset" style="margin-top:1.5rem; padding:1.2rem;">
+                    <i class="fas fa-seedling" style="color:var(--primary);"></i>
+                    <strong>Our Vision:</strong> A deficiency-free world where food is first-line therapy.
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:1.5rem; margin-top:1.5rem;">
+                    <div style="text-align:center; padding:1rem; background:#f8fafc; border-radius:var(--radius-sm);">
+                        <i class="fas fa-users" style="font-size:2.5rem; color:var(--primary-light);"></i>
+                        <h4>30,000+</h4>
+                        <p>Lives Impacted</p>
+                    </div>
+                    <div style="text-align:center; padding:1rem; background:#f8fafc; border-radius:var(--radius-sm);">
+                        <i class="fas fa-school" style="font-size:2.5rem; color:var(--primary-light);"></i>
+                        <h4>50+</h4>
+                        <p>Schools Reached</p>
+                    </div>
+                    <div style="text-align:center; padding:1rem; background:#f8fafc; border-radius:var(--radius-sm);">
+                        <i class="fas fa-apple-alt" style="font-size:2.5rem; color:var(--primary-light);"></i>
+                        <h4>100+</h4>
+                        <p>Food Protocols</p>
+                    </div>
+                </div>
+
+                <img src="Images/about-team.jpg" style="width:100%; border-radius: var(--radius); margin-top:1.5rem;" alt="Team" loading="lazy">
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: DIABETES
+        ======================================== -->
+        <div id="page-diabetes" class="page">
+            <div class="neumorph-card">
+                <h2><i class="fas fa-droplet" style="color:#8e44ad;"></i> Diabetes Mellitus &amp; Diabetes Insipidus</h2>
+
+                <div class="disease-grid">
+                    <!-- Type 1 & 2 Mellitus -->
+                    <div class="disease-card disease-diabetes">
+                        <img class="card-image" src="Images/melitus.jpg" alt="Diabetes Mellitus" loading="lazy">
+                        <h3>Type 1 &amp; 2 Mellitus</h3>
+                        <p><strong>Causes:</strong> Insulin deficiency (Type 1) or insulin resistance (Type 2).</p>
+                        <p><strong>Symptoms:</strong> Excessive thirst, frequent urination, fatigue, blurred vision.</p>
+                        <h4>🥗 Recommended Foods:</h4>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-leafy.jpg" alt="Leafy Greens"> Leafy Greens (Spinach, Kale)</li>
+                            <li><img class="food-icon" src="Images/food-berries.jpg" alt="Berries"> Berries (Blueberries, Strawberries)</li>
+                            <li><img class="food-icon" src="Images/food-wholegrains.jpg" alt="Whole Grains"> Whole Grains (Oats, Quinoa)</li>
+                            <li><img class="food-icon" src="Images/food-cinnamon.jpg" alt="Cinnamon"> Cinnamon (Helps regulate blood sugar)</li>
+                            <li><img class="food-icon" src="Images/food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Chickpeas)</li>
+                        </ul>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplements: Chromium, Alpha-Lipoic Acid, Magnesium</div>
+                        <div class="attack-badge">⚡ Attack: Insulin deficiency/resistance → high glucose → organ damage (kidneys, eyes, nerves).</div>
+                    </div>
+
+                    <!-- Diabetes Insipidus -->
+                    <div class="disease-card disease-diabetes">
+                        <img class="card-image" src="Images/download (2).jpg" alt="Diabetes Insipidus" loading="lazy">
+                        <h3>Diabetes Insipidus</h3>
+                        <p><strong>Causes:</strong> ADH (antidiuretic hormone) deficiency or kidney resistance to ADH.</p>
+                        <p><strong>Symptoms:</strong> Extreme thirst, excessive dilute urine, dehydration.</p>
+                        <h4>💧 Recommended Foods &amp; Hydration:</h4>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-cucumber.jpg" alt="Cucumber"> Cucumber (High water content)</li>
+                            <li><img class="food-icon" src="Images/food-melon.jpg" alt="Melon"> Melon (Watermelon, Cantaloupe)</li>
+                            <li><img class="food-icon" src="Images/food-broth.jpg" alt="Broth"> Low-sodium broths</li>
+                            <li><img class="food-icon" src="Images/food-coconut.jpg" alt="Coconut Water"> Coconut Water (Natural electrolytes)</li>
+                        </ul>
+                        <div class="supplement-tag"><i class="fas fa-tint"></i> Electrolyte support + Desmopressin (medical treatment)</div>
+                        <div class="attack-badge">💧 ADH deficiency → kidneys cannot retain water → severe dehydration and electrolyte imbalance.</div>
+                    </div>
+                </div>
+
+                <div class="neumorph-inset" style="margin-top:1.5rem; padding:1.2rem;">
+                    <h4><i class="fas fa-info-circle"></i> Prevention &amp; Management Tips</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
+                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
+                            Monitor blood glucose regularly
+                        </li>
+                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
+                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
+                            Maintain a balanced diet with low glycemic index foods
+                        </li>
+                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
+                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
+                            Stay hydrated and exercise regularly
+                        </li>
+                        <li style="padding:0.5rem 0;">
+                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
+                            Take medications as prescribed by your doctor
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: GOITER
+        ======================================== -->
+        <div id="page-goiter" class="page">
+            <div class="neumorph-card disease-goiter" style="border-left:8px solid #e67e22;">
+                <h2><i class="fas fa-thyroid" style="color:#e67e22;"></i> GOITER: Iodine Deficiency &amp; Thyroid Enlargement</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Goiter occurs when the thyroid gland enlarges due to lack of iodine, or autoimmune issues.
+                            Our <strong>dedicated protocol</strong> focuses on iodine-rich marine foods, selenium,
+                            and zinc for hormone synthesis.
+                        </p>
+
+                        <h3>🥗 Recommended Foods:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-seaweed.jpg" alt="Seaweed"> Seaweed / Kelp (High iodine)</li>
+                            <li><img class="food-icon" src="Images/food-fish.jpg" alt="Fish"> Wild-caught fish (Cod, Tuna)</li>
+                            <li><img class="food-icon" src="Images/food-shrimp.jpg" alt="Shrimp"> Shrimp and other shellfish</li>
+                            <li><img class="food-icon" src="Images/food-eggs.jpg" alt="Eggs"> Eggs &amp; Brazil nuts (Selenium)</li>
+                            <li><img class="food-icon" src="Images/food-iodized-salt.jpg" alt="Iodized Salt"> Iodized salt (Daily small amount)</li>
+                            <li><img class="food-icon" src="Images/food-dairy.jpg" alt="Dairy"> Dairy products (Milk, Yogurt)</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-pills"></i> Supplementary Eradication: Potassium iodide (under supervision), Selenium methionine, L-tyrosine</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            ⚠️ How it attacks: Iodine deficit → low T3/T4 → high TSH → thyroid grows →
+                            neck swelling &amp; metabolic disturbances.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/images.jpg" alt="Goiter Visual" loading="lazy">
+                        <div style="margin-top:1rem; background:#fef9f0; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Key Facts</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Iodine is essential for thyroid hormone production</li>
+                                <li>🔹 Selenium helps convert T4 to active T3 hormone</li>
+                                <li>🔹 Goiter is preventable with adequate iodine intake</li>
+                                <li>🔹 Salt iodization programs have reduced goiter globally</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: OSTEOPOROSIS
+        ======================================== -->
+        <div id="page-osteoporosis" class="page">
+            <div class="neumorph-card disease-osteo" style="border-left:8px solid #2c7da0;">
+                <h2><i class="fas fa-bone" style="color:#2c7da0;"></i> OSTEOPOROSIS: Silent Bone Thinning</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Nutrient deficiency (Calcium, Vitamin D, K2, Magnesium) accelerates bone resorption.
+                            Our unique anti-osteoporosis plan rebuilds density and prevents fractures.
+                        </p>
+
+                        <h3>🥛 Recommended Foods:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-dairy.jpg" alt="Dairy"> Dairy (Yogurt, Cheese, Milk) – Calcium rich</li>
+                            <li><img class="food-icon" src="Images/food-kale.jpg" alt="Kale"> Kale, Collard greens (K2, Magnesium)</li>
+                            <li><img class="food-icon" src="Images/food-salmon.jpg" alt="Salmon"> Salmon &amp; Sardines (Vitamin D)</li>
+                            <li><img class="food-icon" src="Images/food-almonds.jpg" alt="Almonds"> Almonds, Sesame seeds</li>
+                            <li><img class="food-icon" src="Images/food-tofu.jpg" alt="Tofu"> Tofu (Calcium-fortified)</li>
+                            <li><img class="food-icon" src="Images/food-orange.jpg" alt="Orange"> Oranges (Vitamin C for collagen)</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Calcium citrate, Vitamin D3 (2000 IU), K2 MK-7, Boron, Magnesium glycinate</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            🏹 How osteoporosis attacks: Demineralization → porous bones → fragility fractures &amp; height loss.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/images (1).jpg" alt="Osteoporosis Bone" loading="lazy">
+                        <div style="margin-top:1rem; background:#f0f8fc; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Risk Factors</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Age (especially post-menopausal women)</li>
+                                <li>🔹 Low calcium and Vitamin D intake</li>
+                                <li>🔹 Sedentary lifestyle</li>
+                                <li>🔹 Family history of osteoporosis</li>
+                                <li>🔹 Smoking and excessive alcohol</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: ANEMIA
+        ======================================== -->
+        <div id="page-anemia" class="page">
+            <div class="neumorph-card disease-anemia" style="border-left:8px solid #c44536;">
+                <h2><i class="fas fa-tint" style="color:#c44536;"></i> IRON-DEFICIENCY ANEMIA</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Anemia occurs when the body doesn't have enough healthy red blood cells to carry
+                            adequate oxygen to tissues. Iron-deficiency anemia is the most common type,
+                            caused by insufficient iron intake or absorption.
+                        </p>
+
+                        <p><strong>Symptoms:</strong> Fatigue, weakness, pale skin, shortness of breath,
+                        dizziness, cold hands and feet.</p>
+
+                        <h3>🥩 Recommended Foods:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-red-meat.jpg" alt="Red Meat"> Red meat (Beef, Lamb) – Heme iron</li>
+                            <li><img class="food-icon" src="Images/food-liver.jpg" alt="Liver"> Liver (Organ meat – high iron)</li>
+                            <li><img class="food-icon" src="Images/food-spinach.jpg" alt="Spinach"> Spinach and dark leafy greens</li>
+                            <li><img class="food-icon" src="Images/food-lentils.jpg" alt="Lentils"> Lentils, Beans, Chickpeas</li>
+                            <li><img class="food-icon" src="Images/food-fortified-cereal.jpg" alt="Fortified Cereal"> Fortified cereals</li>
+                            <li><img class="food-icon" src="Images/food-citrus.jpg" alt="Citrus"> Citrus fruits (Vitamin C for absorption)</li>
+                            <li><img class="food-icon" src="Images/food-pumpkin-seeds.jpg" alt="Pumpkin Seeds"> Pumpkin seeds</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Ferrous bisglycinate + Vitamin C (for better absorption)</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            ⚡ How anemia attacks: Fatigue, pallor, breathlessness due to low hemoglobin &amp; iron depletion.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/anaemia.jpg" alt="Anemia Blood" loading="lazy">
+                        <div style="margin-top:1rem; background:#fef5f3; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Prevention Tips</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Eat iron-rich foods with Vitamin C</li>
+                                <li>🔹 Avoid tea/coffee with meals (blocks iron absorption)</li>
+                                <li>🔹 Include heme iron sources (animal products)</li>
+                                <li>🔹 Get regular blood tests to monitor levels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: SCURVY
+        ======================================== -->
+        <div id="page-scurvy" class="page">
+            <div class="neumorph-card disease-scurvy" style="border-left:8px solid #e9b35f;">
+                <h2><i class="fas fa-vitamin-c" style="color:#e9b35f;"></i> SCURVY: Vitamin C Deficiency</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Scurvy is a disease caused by severe and prolonged deficiency of Vitamin C (ascorbic acid).
+                            It affects collagen synthesis, leading to weakened blood vessels, poor wound healing,
+                            and gum disease.
+                        </p>
+
+                        <p><strong>Symptoms:</strong> Fatigue, swollen bleeding gums, joint pain, poor wound healing,
+                        bruising easily, anemia.</p>
+
+                        <h3>🍊 Recommended Foods:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-orange.jpg" alt="Orange"> Oranges and Citrus fruits</li>
+                            <li><img class="food-icon" src="Images/food-kiwi.jpg" alt="Kiwi"> Kiwi fruit</li>
+                            <li><img class="food-icon" src="Images/food-strawberry.jpg" alt="Strawberry"> Strawberries</li>
+                            <li><img class="food-icon" src="Images/food-bell-pepper.jpg" alt="Bell Pepper"> Bell peppers (Red &amp; Green)</li>
+                            <li><img class="food-icon" src="Images/food-broccoli.jpg" alt="Broccoli"> Broccoli</li>
+                            <li><img class="food-icon" src="Images/food-guava.jpg" alt="Guava"> Guava</li>
+                            <li><img class="food-icon" src="Images/food-tomato.jpg" alt="Tomato"> Tomatoes</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin C (500-1000 mg daily) until symptoms resolve</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            ⚠️ How scurvy attacks: Vitamin C deficiency → impaired collagen production →
+                            bleeding gums, joint pain, poor wound healing.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/maxresdefault.jpg" alt="Scurvy" loading="lazy">
+                        <div style="margin-top:1rem; background:#fffaf0; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Quick Facts</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Vitamin C is essential for collagen production</li>
+                                <li>🔹 Humans cannot synthesize Vitamin C</li>
+                                <li>🔹 Scurvy was common among sailors (lack of fresh produce)</li>
+                                <li>🔹 Symptoms improve within days of Vitamin C intake</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: RICKETS
+        ======================================== -->
+        <div id="page-rickets" class="page">
+            <div class="neumorph-card" style="border-left:8px solid #2ecc71;">
+                <h2><i class="fas fa-baby" style="color:#2ecc71;"></i> RICKETS: Vitamin D &amp; Calcium Deficiency in Children</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Rickets is a condition that affects bone development in children, caused by
+                            Vitamin D, calcium, or phosphate deficiency. It leads to soft, weak bones
+                            and skeletal deformities.
+                        </p>
+
+                        <p><strong>Symptoms:</strong> Delayed growth, bowed legs, knock knees, soft skull bones,
+                        muscle weakness, bone pain.</p>
+
+                        <h3>🌞 Recommended Foods &amp; Sunlight:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="images/food-fish.jpg" alt="Fish"> Fatty fish (Salmon, Mackerel)</li>
+                            <li><img class="food-icon" src="images/food-eggs.jpg" alt="Eggs"> Egg yolks</li>
+                            <li><img class="food-icon" src="images/food-dairy.jpg" alt="Dairy"> Fortified dairy products (Milk, Yogurt)</li>
+                            <li><img class="food-icon" src="images/food-cereal.jpg" alt="Cereal"> Fortified cereals</li>
+                            <li><img class="food-icon" src="images/food-mushroom.jpg" alt="Mushroom"> Mushrooms (Sun-exposed)</li>
+                            <li><img class="food-icon" src="images/food-sunlight.jpg" alt="Sunlight"> <strong>Sunlight exposure</strong> (15-30 minutes daily)</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin D3 drops (400-1000 IU daily), Calcium supplements</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            🦴 How rickets attacks: Vitamin D deficiency → impaired calcium absorption →
+                            soft bones → skeletal deformities and growth problems.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/rickets.webp" alt="Rickets" loading="lazy">
+                        <div style="margin-top:1rem; background:#f0faf4; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Prevention Tips</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Ensure adequate sunlight exposure</li>
+                                <li>🔹 Include Vitamin D rich foods in diet</li>
+                                <li>🔹 Breastfed infants may need supplements</li>
+                                <li>🔹 Regular check-ups to monitor growth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: OBESITY
+        ======================================== -->
+        <div id="page-obesity" class="page">
+            <div class="neumorph-card" style="border-left:8px solid #e74c3c;">
+                <h2><i class="fas fa-weight" style="color:#e74c3c;"></i> OBESITY: Nutritional Imbalance &amp; Lifestyle Factors</h2>
+
+                <div class="disease-detail">
+                    <div class="content">
+                        <p>
+                            Obesity is a complex condition characterized by excessive body fat, often caused by
+                            an energy imbalance where calorie intake exceeds energy expenditure. It's linked
+                            to poor nutrition, lack of physical activity, and genetic factors.
+                        </p>
+
+                        <p><strong>Health Risks:</strong> Type 2 diabetes, heart disease, hypertension, stroke,
+                        certain cancers, sleep apnea, joint problems.</p>
+
+                        <h3>🥗 Recommended Foods for Healthy Weight:</h3>
+                        <ul class="food-list">
+                            <li><img class="food-icon" src="Images/food-leafy.jpg" alt="Leafy Greens"> Leafy greens (Low calorie, high fiber)</li>
+                            <li><img class="food-icon" src="Images/food-wholegrains.jpg" alt="Whole Grains"> Whole grains (Oats, Brown rice, Quinoa)</li>
+                            <li><img class="food-icon" src="Images/food-lean-protein.jpg" alt="Lean Protein"> Lean proteins (Chicken, Fish, Tofu)</li>
+                            <li><img class="food-icon" src="Images/food-berries.jpg" alt="Berries"> Berries (Low sugar, high antioxidants)</li>
+                            <li><img class="food-icon" src="Images/food-nuts.jpg" alt="Nuts"> Nuts and seeds (In moderation)</li>
+                            <li><img class="food-icon" src="Images/food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Beans)</li>
+                            <li><img class="food-icon" src="Images/food-water.jpg" alt="Water"> Water (Stay hydrated)</li>
+                        </ul>
+
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplements: Omega-3 fatty acids, Vitamin D, Fiber supplements</div>
+
+                        <div class="attack-badge" style="display:block; margin-top:1rem;">
+                            ⚠️ How obesity attacks: Excess calories → fat accumulation → inflammation →
+                            insulin resistance → chronic disease.
+                        </div>
+                    </div>
+                    <div class="image-side">
+                        <img src="Images/obesity.jpg" alt="Obesity" loading="lazy">
+                        <div style="margin-top:1rem; background:#fef5f3; padding:1rem; border-radius:var(--radius-sm);">
+                            <h4><i class="fas fa-clipboard-list"></i> Management Tips</h4>
+                            <ul style="list-style:none; padding:0;">
+                                <li>🔹 Balanced diet with portion control</li>
+                                <li>🔹 Regular physical activity (150+ minutes/week)</li>
+                                <li>🔹 Adequate sleep and stress management</li>
+                                <li>🔹 Monitor weight and seek professional guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: RESOURCES
+        ======================================== -->
+        <div id="page-resources" class="page">
+            <div class="neumorph-card">
+                <h2><i class="fas fa-book" style="color:var(--primary);"></i> Educational Resources</h2>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="content">
+                        <h4>Complete Nutrition Guide</h4>
+                        <p>A comprehensive guide covering all deficiency diseases, food protocols, and prevention strategies.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="content">
+                        <h4>Daily Meal Planner</h4>
+                        <p>Printable meal planner with balanced nutrition recommendations for different age groups.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-play-circle"></i></div>
+                    <div class="content">
+                        <h4>Educational Videos</h4>
+                        <p>Watch our video series on nutrition, deficiency diseases, and healthy eating habits.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-external-link-alt"></i> Watch</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-list-check"></i></div>
+                    <div class="content">
+                        <h4>Nutrient Deficiency Checklist</h4>
+                        <p>Self-assessment checklist to identify potential nutrient deficiencies and symptoms.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="content">
+                        <h4>Community Action Guide</h4>
+                        <p>How to start a nutrition awareness campaign in your school or community.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon"><i class="fas fa-utensils"></i></div>
+                    <div class="content">
+                        <h4>Healthy Recipe Book</h4>
+                        <p>Collection of nutritious, affordable recipes to prevent and manage deficiency diseases.</p>
+                    </div>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: CONTACT
+        ======================================== -->
+        <div id="page-contact" class="page">
+            <div class="neumorph-card">
+                <h2><i class="fas fa-envelope" style="color:var(--primary);"></i> Contact Us</h2>
+                <p style="margin-bottom:1.5rem;">
+                    Have questions or want to get involved? Reach out to us and we'll get back to you as soon as possible.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Address</h4>
+                        <p>Sanga Secondary School<br>Science Club<br>Uganda</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+256 759019164 <br>+256 771870724</p> <br>+256 764111310</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>sangas1948@gmail.com<p> 
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-clock"></i>
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday<br>8:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div>
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div>
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div>
+                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                            <select id="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="nutrition">Nutrition Question</option>
+                                <option value="disease">Disease Information</option>
+                                <option value="volunteer">Volunteer / Partnership</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="message"><i class="fas fa-comment"></i> Message</label>
+                    <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ========================================
+        FOOTER
+        ======================================== -->
+        <footer class="neumorph">
+            <div class="footer-divider"></div>
+            <p>
+                <strong>Eat &amp; Beat Deficiency</strong> &bull; Sanga Secondary School Science Club
+            </p>
+            <p class="footer-address">
+                <i class="fas fa-map-pin"></i> Sanga Secondary School, Uganda
+            </p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p style="margin-top:1rem; font-size:0.7rem; opacity:0.6;">
+                &copy; 2026 Eat &amp; Beat Deficiency. All rights reserved.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Message sent successfully!</span>
+    </div>
+
+    <!-- ========================================
+    JAVASCRIPT
+    ======================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ========================================
+            // NAVIGATION
+            // ========================================
+            const navBtns = document.querySelectorAll('.nav-btn');
+            const pages = document.querySelectorAll('.page');
+
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active from all buttons
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Hide all pages
+                    pages.forEach(p => p.classList.remove('active-page'));
+
+                    // Show selected page
+                    const pageId = 'page-' + this.dataset.page;
+                    const targetPage = document.getElementById(pageId);
+                    if (targetPage) {
+                        targetPage.classList.add('active-page');
+                        // Scroll to top of page
+                        targetPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // ========================================
+            // CONTACT FORM
+            // ========================================
+            const contactForm = document.getElementById('contactForm');
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    showToast('Please fill in all required fields.', 'error');
+                    return;
+                }
+
+                // Simulate sending
+                showToast('Thank you! Your message has been sent successfully.', 'success');
+                this.reset();
+            });
+
+            // ========================================
+            // TOAST NOTIFICATION
+            // ========================================
+            let toastTimeout;
+
+            function showToast(message, type = 'success') {
+                toastMessage.textContent = message;
+                toast.className = 'toast show';
+                toast.style.background = type === 'error' ? '#c44536' : 'var(--primary)';
+
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 4000);
+            }
+
+            // ========================================
+            // RESOURCE DOWNLOAD BUTTONS
+            // ========================================
+            document.querySelectorAll('.btn-download').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Get the resource title
+                    const title = this.closest('.resource-card').querySelector('h4').textContent;
+                    showToast(`Downloading "${title}"... Coming soon!`, 'success');
+                });
+            });
+
+            // ========================================
+            // SMOOTH SCROLL FOR INTERNAL LINKS
+            // ========================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
