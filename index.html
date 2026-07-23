@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +18,7 @@
         /* ========================================
                    CSS RESET & BASE
                 ======================================== */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -42,9 +39,7 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -62,21 +57,18 @@
         .neumorph {
             background: var(--bg);
             border-radius: var(--radius);
-            box-shadow: 12px 12px 24px var(--shadow-dark),
-                -8px -8px 18px var(--shadow-light);
+            box-shadow: 12px 12px 24px var(--shadow-dark), -8px -8px 18px var(--shadow-light);
             transition: var(--transition);
         }
 
         .neumorph:hover {
-            box-shadow: 16px 16px 32px var(--shadow-dark),
-                -10px -10px 24px var(--shadow-light);
+            box-shadow: 16px 16px 32px var(--shadow-dark), -10px -10px 24px var(--shadow-light);
         }
 
         .neumorph-card {
             background: var(--bg);
             border-radius: var(--radius);
-            box-shadow: 8px 8px 16px var(--shadow-dark),
-                -6px -6px 12px var(--shadow-light);
+            box-shadow: 8px 8px 16px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
             padding: 1.8rem;
             transition: var(--transition);
             margin-bottom: 1.5rem;
@@ -85,8 +77,7 @@
         .neumorph-inset {
             background: var(--bg);
             border-radius: var(--radius-sm);
-            box-shadow: inset 4px 4px 8px var(--shadow-dark),
-                inset -4px -4px 8px var(--shadow-light);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
             padding: 1.2rem;
         }
 
@@ -99,30 +90,24 @@
             font-size: 0.9rem;
             color: var(--primary);
             cursor: pointer;
-            box-shadow: 6px 6px 12px var(--shadow-dark),
-                -4px -4px 10px var(--shadow-light);
+            box-shadow: 6px 6px 12px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
             transition: var(--transition);
         }
 
         .neumorph-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 10px 10px 20px var(--shadow-dark),
-                -6px -6px 14px var(--shadow-light);
+            box-shadow: 10px 10px 20px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
         }
 
         .neumorph-btn:active {
             transform: translateY(0px);
-            box-shadow: inset 4px 4px 8px var(--shadow-dark),
-                inset -4px -4px 8px var(--shadow-light);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
         }
 
         /* ========================================
                    LAYOUT
                 ======================================== */
-        .app-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .app-container { max-width: 1400px; margin: 0 auto; }
 
         /* ========================================
                    HEADER
@@ -149,8 +134,7 @@
             height: 80px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08),
-                -3px -3px 8px white;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08), -3px -3px 8px white;
             background: #ffffff;
             padding: 4px;
             border: 2px solid var(--primary-light);
@@ -211,13 +195,8 @@
         }
 
         @keyframes pulse-leaf {
-            0%,
-            100% {
-                transform: scale(1) rotate(0deg);
-            }
-            50% {
-                transform: scale(1.1) rotate(10deg);
-            }
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
         }
 
         /* ========================================
@@ -246,8 +225,7 @@
             font-size: 0.8rem;
             color: var(--primary-dark);
             cursor: pointer;
-            box-shadow: 5px 5px 10px var(--shadow-dark),
-                -3px -3px 8px var(--shadow-light);
+            box-shadow: 5px 5px 10px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
             transition: var(--transition);
             white-space: nowrap;
         }
@@ -259,8 +237,7 @@
 
         .nav-btn.active {
             background: var(--bg);
-            box-shadow: inset 3px 3px 7px var(--shadow-dark),
-                inset -2px -2px 5px var(--shadow-light);
+            box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
             color: var(--primary);
             font-weight: 700;
         }
@@ -268,24 +245,12 @@
         /* ========================================
                    PAGES
                 ======================================== */
-        .page {
-            display: none;
-            animation: fadeSlide 0.35s ease forwards;
-        }
-
-        .page.active-page {
-            display: block;
-        }
+        .page { display: none; animation: fadeSlide 0.35s ease forwards; }
+        .page.active-page { display: block; }
 
         @keyframes fadeSlide {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ========================================
@@ -297,8 +262,7 @@
             border-radius: 48px 20px 20px 48px;
             padding: 2.5rem 3rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 25px 40px -12px rgba(0, 20, 30, 0.6),
-                inset 0 2px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 40px -12px rgba(0, 20, 30, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.15);
             position: relative;
             overflow: hidden;
             color: var(--text-light);
@@ -371,6 +335,7 @@
             letter-spacing: 0.3px;
             border: 1px solid rgba(255, 255, 200, 0.2);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .welcome-sanga .science-badge:hover {
@@ -378,18 +343,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
         }
 
-        .welcome-sanga .science-badge i {
-            margin-right: 8px;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: var(--radius);
-            margin-bottom: 2rem;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        }
+        .welcome-sanga .science-badge i { margin-right: 8px; }
 
         /* ========================================
                    CLINICAL NUTRITION SECTION
@@ -403,67 +357,50 @@
             text-align: center;
         }
 
-        .clinical-header h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
+        .clinical-header h3 { font-size: 1.6rem; font-weight: 700; }
+        .clinical-header p { opacity: 0.9; font-size: 1rem; margin-top: 0.3rem; }
 
-        .clinical-header p {
-            opacity: 0.9;
-            font-size: 1rem;
-            margin-top: 0.3rem;
-        }
-
-        .core-grid,
-        .nutrition-categories {
+        .core-grid, .nutrition-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
 
-        .core-card,
-        .cat-card {
+        .core-card, .cat-card {
             background: white;
             border-radius: var(--radius-sm);
             padding: 1.8rem;
-            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05),
-                -4px -4px 8px rgba(255, 255, 255, 0.8);
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05), -4px -4px 8px rgba(255, 255, 255, 0.8);
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .core-card:hover,
-        .cat-card:hover {
+        .core-card:hover, .cat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.08),
-                -6px -6px 12px rgba(255, 255, 255, 0.9);
+            box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.08), -6px -6px 12px rgba(255, 255, 255, 0.9);
         }
 
-        .core-card .icon-large,
-        .cat-card .icon-large {
+        .core-card .icon-large, .cat-card .icon-large {
             font-size: 2.5rem;
             color: var(--primary-light);
             margin-bottom: 0.8rem;
             display: block;
         }
 
-        .core-card h4,
-        .cat-card h4 {
+        .core-card h4, .cat-card h4 {
             color: var(--primary);
             font-size: 1.2rem;
             margin-bottom: 0.8rem;
         }
 
-        .core-card h3,
-        .cat-card h3 {
+        .core-card h3, .cat-card h3 {
             color: var(--primary);
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
 
-        .core-card p,
-        .cat-card p {
+        .core-card p, .cat-card p {
             color: #4a5a5a;
             font-size: 0.95rem;
         }
@@ -477,10 +414,7 @@
             color: var(--primary-dark);
         }
 
-        .section-title i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
+        .section-title i { margin-right: 10px; color: var(--secondary); }
 
         /* ========================================
                    DISEASE CARDS
@@ -498,8 +432,7 @@
             transition: var(--transition);
             border-left: 6px solid var(--primary-light);
             background: white;
-            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05),
-                -4px -4px 8px rgba(255, 255, 255, 0.8);
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05), -4px -4px 8px rgba(255, 255, 255, 0.8);
         }
 
         .disease-card:hover {
@@ -554,10 +487,7 @@
             font-weight: 500;
         }
 
-        .supplement-tag i {
-            margin-right: 6px;
-            color: var(--primary);
-        }
+        .supplement-tag i { margin-right: 6px; color: var(--primary); }
 
         .attack-badge {
             background: #ffefe5;
@@ -570,32 +500,16 @@
             color: #aa6f3c;
         }
 
-        .attack-badge i {
-            margin-right: 6px;
-        }
+        .attack-badge i { margin-right: 6px; }
 
         /* Disease-specific colors */
-        .disease-goiter {
-            border-left-color: #e67e22;
-        }
-        .disease-osteo {
-            border-left-color: #2c7da0;
-        }
-        .disease-anemia {
-            border-left-color: #c44536;
-        }
-        .disease-scurvy {
-            border-left-color: #e9b35f;
-        }
-        .disease-diabetes {
-            border-left-color: #8e44ad;
-        }
-        .disease-rickets {
-            border-left-color: #2ecc71;
-        }
-        .disease-obesity {
-            border-left-color: #e74c3c;
-        }
+        .disease-goiter { border-left-color: #e67e22; }
+        .disease-osteo { border-left-color: #2c7da0; }
+        .disease-anemia { border-left-color: #c44536; }
+        .disease-scurvy { border-left-color: #e9b35f; }
+        .disease-diabetes { border-left-color: #8e44ad; }
+        .disease-rickets { border-left-color: #2ecc71; }
+        .disease-obesity { border-left-color: #e74c3c; }
 
         /* ========================================
                    DISEASE DETAIL PAGES
@@ -620,26 +534,6 @@
             width: 100%;
             border-radius: var(--radius);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .info-item {
-            background: #f8fafc;
-            padding: 1rem;
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--primary-light);
-        }
-
-        .info-item strong {
-            display: block;
-            color: var(--primary-dark);
-            margin-bottom: 0.3rem;
         }
 
         /* ========================================
@@ -699,28 +593,22 @@
         /* ========================================
                    CONTACT FORM
                 ======================================== */
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
+        .contact-form input, .contact-form textarea, .contact-form select {
             width: 100%;
             padding: 0.9rem 1.2rem;
             margin: 0.6rem 0;
             border: none;
             background: var(--bg);
             border-radius: var(--radius-sm);
-            box-shadow: inset 4px 4px 8px #cbd6e4,
-                inset -3px -3px 6px white;
+            box-shadow: inset 4px 4px 8px #cbd6e4, inset -3px -3px 6px white;
             outline: none;
             font-size: 1rem;
             font-family: 'Inter', sans-serif;
             transition: var(--transition);
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            box-shadow: inset 4px 4px 10px #b8c5d6,
-                inset -3px -3px 8px white;
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            box-shadow: inset 4px 4px 10px #b8c5d6, inset -3px -3px 8px white;
         }
 
         .contact-form textarea {
@@ -760,9 +648,7 @@
             box-shadow: 8px 8px 24px rgba(28, 110, 79, 0.4);
         }
 
-        .btn-primary:active {
-            transform: translateY(0px);
-        }
+        .btn-primary:active { transform: translateY(0px); }
 
         .contact-info {
             display: grid;
@@ -785,9 +671,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .contact-info .info-box h4 {
-            color: var(--primary-dark);
-        }
+        .contact-info .info-box h4 { color: var(--primary-dark); }
 
         /* ========================================
                    FOOTER
@@ -842,185 +726,62 @@
                 padding: 2rem 1.8rem;
                 border-radius: 32px 12px 12px 32px;
             }
-
-            .welcome-sanga h2 {
-                font-size: 1.8rem;
-            }
-
-            .welcome-sanga p {
-                max-width: 100%;
-                font-size: 1rem;
-            }
+            .welcome-sanga h2 { font-size: 1.8rem; }
+            .welcome-sanga p { max-width: 100%; font-size: 1rem; }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 0.8rem;
-            }
-
+            body { padding: 0.8rem; }
             .logo-header {
                 padding: 0.8rem 1rem;
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
             }
-
-            .logo-area {
-                justify-content: center;
-            }
-
-            .logo-img {
-                width: 60px;
-                height: 60px;
-            }
-
-            .main-heading {
-                font-size: 1.4rem;
-            }
-
-            .brand-title {
-                justify-content: center;
-            }
-
-            .logo-text p {
-                font-size: 0.7rem;
-            }
-
-            .nav-links {
-                gap: 0.4rem;
-            }
-
-            .nav-btn {
-                padding: 0.4rem 1rem;
-                font-size: 0.7rem;
-            }
-
+            .logo-area { justify-content: center; }
+            .logo-img { width: 60px; height: 60px; }
+            .main-heading { font-size: 1.4rem; }
+            .brand-title { justify-content: center; }
+            .logo-text p { font-size: 0.7rem; }
+            .nav-links { gap: 0.4rem; }
+            .nav-btn { padding: 0.4rem 1rem; font-size: 0.7rem; }
             .welcome-sanga {
                 padding: 1.5rem 1rem;
                 border-radius: 24px 8px 8px 24px;
                 border-left-width: 6px;
             }
-
-            .welcome-sanga h2 {
-                font-size: 1.4rem;
-            }
-
-            .welcome-sanga p {
-                font-size: 0.9rem;
-                max-width: 100%;
-            }
-
-            .welcome-sanga .science-badge {
-                font-size: 0.75rem;
-                padding: 0.3rem 1.2rem;
-            }
-
-            .welcome-sanga::before {
-                font-size: 4rem;
-                right: 0px;
-                bottom: 0px;
-            }
-
-            .clinical-header {
-                padding: 1rem 1.2rem;
-            }
-
-            .clinical-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .core-grid,
-            .nutrition-categories {
-                grid-template-columns: 1fr;
-            }
-
-            .disease-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .disease-detail {
-                flex-direction: column;
-            }
-
-            .neumorph-card {
-                padding: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 1.1rem;
-                padding: 0.6rem 1rem;
-            }
-
-            .header-right .fa-leaf {
-                font-size: 1.4rem;
-            }
-
-            .nonprofit-label {
-                font-size: 0.55rem;
-            }
-
-            .hero-image {
-                max-height: 200px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .resource-card {
-                flex-wrap: wrap;
-                text-align: center;
-            }
-
-            .resource-card .btn-download {
-                margin: 0 auto;
-            }
+            .welcome-sanga h2 { font-size: 1.4rem; }
+            .welcome-sanga p { font-size: 0.9rem; max-width: 100%; }
+            .welcome-sanga .science-badge { font-size: 0.75rem; padding: 0.3rem 1.2rem; }
+            .welcome-sanga::before { font-size: 4rem; right: 0px; bottom: 0px; }
+            .clinical-header { padding: 1rem 1.2rem; }
+            .clinical-header h3 { font-size: 1.2rem; }
+            .core-grid, .nutrition-categories { grid-template-columns: 1fr; }
+            .disease-grid { grid-template-columns: 1fr; }
+            .disease-detail { flex-direction: column; }
+            .neumorph-card { padding: 1.2rem; }
+            .section-title { font-size: 1.1rem; padding: 0.6rem 1rem; }
+            .header-right .fa-leaf { font-size: 1.4rem; }
+            .nonprofit-label { font-size: 0.55rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .resource-card { flex-wrap: wrap; text-align: center; }
+            .resource-card .btn-download { margin: 0 auto; }
         }
 
         @media (max-width: 480px) {
-            .welcome-sanga h2 {
-                font-size: 1.2rem;
-            }
-
-            .welcome-sanga p {
-                font-size: 0.85rem;
-            }
-
-            .nav-btn {
-                font-size: 0.65rem;
-                padding: 0.35rem 0.8rem;
-            }
-
-            .disease-card .card-image {
-                height: 140px;
-            }
+            .welcome-sanga h2 { font-size: 1.2rem; }
+            .welcome-sanga p { font-size: 0.85rem; }
+            .nav-btn { font-size: 0.65rem; padding: 0.35rem 0.8rem; }
+            .disease-card .card-image { height: 140px; }
         }
 
         /* ========================================
                    SCROLLBAR STYLING
                 ======================================== */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-light);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
         /* Toast Notification */
         .toast {
@@ -1038,54 +799,340 @@
             z-index: 1000;
         }
 
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast i { margin-right: 10px; }
+
+        /* THREE BIG IMAGES */
+        .big-makers-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0 1.5rem;
+        }
+        .big-maker-card {
+            background: #ffffffea;
+            border-radius: 48px;
+            padding: 1.2rem;
+            text-align: center;
+            width: 220px;
+            box-shadow: 12px 12px 24px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.7);
+            transition: transform 0.25s;
+        }
+        .big-maker-card:hover { transform: translateY(-8px); }
+        .big-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #2a7f62;
+            padding: 4px;
+            background: white;
+            margin-bottom: 1rem;
+        }
+        .maker-name {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1f4e3f;
+        }
+        .maker-role {
+            font-size: 0.8rem;
+            color: #5b6e5c;
         }
 
-        .toast i {
-            margin-right: 10px;
-        }
-    /* THREE BIG IMAGES (project makers prominently large) */
-    .big-makers-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0 1.5rem;
-    }
-    .big-maker-card {
-      background: #ffffffea;
-      border-radius: 48px;
-      padding: 1.2rem;
-      text-align: center;
-      width: 220px;
-      box-shadow: 12px 12px 24px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.7);
-      transition: transform 0.25s;
-    }
-    .big-maker-card:hover {
-      transform: translateY(-8px);
-    }
-    .big-img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #2a7f62;
-      padding: 4px;
-      background: white;
-      margin-bottom: 1rem;
-    }
-    .maker-name {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #1f4e3f;
-    }
-    .maker-role {
-      font-size: 0.8rem;
-      color: #5b6e5c;
-    }
+        /* ========================================
+                   MONETIZATION STYLES
+                ======================================== */
 
+        /* Floating CTA Bar */
+        .floating-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0f2b3d, #1b4b5e);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 999;
+            border-top: 3px solid var(--secondary);
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.3);
+        }
+        .floating-cta-bar p {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        .floating-cta-bar p i { color: var(--secondary); }
+        .floating-cta-bar .btn-cta {
+            background: var(--secondary);
+            color: #0a1f2b;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .floating-cta-bar .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(246, 184, 62, 0.4);
+        }
+        .floating-cta-bar .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .floating-cta-bar .btn-cta-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.4s ease;
+        }
+        .popup-overlay.active { display: flex; }
+        .popup-box {
+            background: white;
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 92%;
+            padding: 2.5rem 2rem 2rem;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            animation: slideUp 0.4s ease;
+            max-height: 95vh;
+            overflow-y: auto;
+        }
+        .popup-box .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .popup-box .close-popup:hover {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            transform: rotate(90deg);
+        }
+        .popup-box .close-popup-bottom {
+            margin-top: 0.8rem;
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
+        }
+        .popup-box .close-popup-bottom:hover { color: #e74c3c; }
+        .popup-box .popup-icon {
+            font-size: 3.5rem;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+        .popup-box h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .popup-box p {
+            color: #5a6a6a;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+        .popup-box input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e6ed;
+            border-radius: 40px;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .popup-box input:focus { border-color: var(--primary-light); }
+        .popup-box .btn-popup {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .popup-box .btn-popup:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(28, 110, 79, 0.3);
+        }
+        .popup-box .popup-footnote {
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-top: 0.8rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(40px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Email capture inline */
+        .email-capture-inline {
+            background: linear-gradient(135deg, #1e3a2f, var(--primary));
+            color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .email-capture-inline h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .email-capture-inline p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .email-capture-inline .inline-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .email-capture-inline .inline-form input {
+            flex: 2;
+            min-width: 200px;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .email-capture-inline .inline-form button {
+            flex: 1;
+            min-width: 120px;
+            background: var(--secondary);
+            color: #0a1f2b;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .email-capture-inline .inline-form button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 16px rgba(246, 184, 62, 0.3);
+        }
+
+        /* Shop */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .shop-item {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.05), -4px -4px 8px rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .shop-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 12px 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .shop-item .shop-icon {
+            font-size: 2.8rem;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+        .shop-item h4 {
+            color: var(--primary-dark);
+            font-size: 1rem;
+        }
+        .shop-item .price {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+        }
+        .shop-item .btn-buy {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        .shop-item .btn-buy:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+        .shop-item .btn-buy.amazon {
+            background: #FF9900;
+        }
+        .shop-item .btn-buy.amazon:hover {
+            background: #e68a00;
+        }
+        .shop-item .btn-buy.donate {
+            background: #e74c3c;
+        }
+        .shop-item .btn-buy.donate:hover {
+            background: #c0392b;
+        }
     </style>
 </head>
 <body>
@@ -1093,11 +1140,11 @@
     <div class="app-container">
 
         <!-- ========================================
-        HEADER
+        HEADER - FIXED IMAGE PATH
         ======================================== -->
         <header class="neumorph logo-header">
             <div class="logo-area">
-                <img class="logo-img" src="Images/download (1) copy.jpg" alt="Eat & Beat Logo" loading="lazy">
+                <img class="logo-img" src="download (1) copy.jpg" alt="Eat & Beat Logo" loading="lazy">
                 <div class="logo-text">
                     <div class="brand-title">
                         <span class="main-heading">
@@ -1129,6 +1176,7 @@
                 <button class="nav-btn" data-page="scurvy"><i class="fas fa-vitamin-c"></i> Scurvy</button>
                 <button class="nav-btn" data-page="rickets"><i class="fas fa-baby"></i> Rickets</button>
                 <button class="nav-btn" data-page="obesity"><i class="fas fa-weight"></i> Obesity</button>
+                <button class="nav-btn" data-page="shop"><i class="fas fa-shopping-cart"></i> Shop</button>
                 <button class="nav-btn" data-page="resources"><i class="fas fa-book"></i> Resources</button>
                 <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> Contact</button>
             </div>
@@ -1137,17 +1185,27 @@
         <!-- ========================================
         PAGE: HOME
         ======================================== -->
-         <div style="background-color:#002980; padding:10px; border-radius:5px;">
-    <marquee>
-        <b style="color:white; font-size:24px;">
-           WELCOME TO SANGA SECONDARY SCHOOL SCIENCE CLUB
-        </b>
-    </marquee>
-</div>
-  <!--STUNNING MARQUEE CONTAINER-->
-  <div class="marquee-wrapper"> <div class="marquee-content"></div> </div>
-  <div id="page-home" class="page active-page">
-  <img src="Images/bestone.png" height="550" width="98%" alt="Description">
+        <div style="background-color:#002980; padding:10px; border-radius:5px;">
+            <marquee>
+                <b style="color:white; font-size:24px;">
+                   WELCOME TO SANGA SECONDARY SCHOOL SCIENCE CLUB
+                </b>
+            </marquee>
+        </div>
+
+        <div id="page-home" class="page active-page">
+            <!-- FIXED: Removed "Images/" from path -->
+            <img src="se ch.png" height="550" width="98%" alt="Description">
+
+            <!-- Email Capture Inline -->
+            <div class="email-capture-inline">
+                <h3><i class="fas fa-envelope"></i> Get Your FREE Deficiency Report!</h3>
+                <p>Subscribe to receive a personalized 5-page PDF guide with meal plans for your specific deficiency risk.</p>
+                <form class="inline-form" id="inlineEmailForm">
+                    <input type="email" id="inlineEmail" placeholder="Enter your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Send Guide</button>
+                </form>
+            </div>
 
             <div class="welcome-sanga">
                 <h2><i class="fas fa-flask"></i> WELCOME TO SANGA SECONDARY SCHOOL SCIENCE CLUB</h2>
@@ -1161,8 +1219,8 @@
                     <em>Nutrition is the process of taking in, absorbing, and utilizing food and nourishing
                     substances to support life.</em>
                 </p>
-                <div class="science-badge">
-                    <i class="fas fa-microscope"></i> Science in Action | Beat Deficiency
+                <div class="science-badge" onclick="openPopup()">
+                    <i class="fas fa-gift"></i> 🎁 FREE Deficiency Report - Click Here
                 </div>
             </div>
 
@@ -1305,7 +1363,7 @@
                 </div>
                 <div class="neumorph-inset" style="text-align:center; padding:1rem;">
                     <i class="fas fa-tint" style="font-size:2rem; color:#c44536;"></i>
-                    <p><strong>Anaemia</strong><br>Iron + Vitamin C</p>
+                    <p><strong>Anemia</strong><br>Iron + Vitamin C</p>
                 </div>
                 <div class="neumorph-inset" style="text-align:center; padding:1rem;">
                     <i class="fas fa-vitamin-c" style="font-size:2rem; color:#e9b35f;"></i>
@@ -1328,47 +1386,44 @@
         </div>
 
         <!-- ========================================
-        PAGE: ABOUT 
+        PAGE: ABOUT - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-about" class="page">
             <div class="neumorph-card">
                 <h2><i class="fas fa-info-circle" style="color:var(--primary);"></i> About Eat &amp; Beat Deficiency</h2>
-               <i class="fas fa-seedling"></i> Project Champions · Eat & Beat Deficiency <i class="fas fa-hand-holding-heart"></i>
-        </div>
-        <!-- THREE VERY BIG IMAGES of project makers -->
-        <div class="big-makers-row">
-          <div class="big-maker-card">
-            <img class="big-img" src="Images/ronald.png" alt="Dr. Sarah" onerror="this.src='https://picsum.photos/id/64/200/200'">
-            <div class="maker-name">Tr Musasire Ronald </div>
-            <div class="maker-role">Club Patron</div>
-          </div>
-          <div class="big-maker-card">
-            <img class="big-img" src="Images/julius.png" alt="Mulema julius" onerror="this.src='https://picsum.photos/id/91/200/200'">
-            <div class="maker-name">Mulema Julius</div>
-            <div class="maker-role">Graphic Designer</div>
-          </div>
-          <div class="big-maker-card">
-            <img class="big-img" src="Images/ismail.png" alt="Dr Ismail Mugisha" onerror="this.src='https://picsum.photos/id/29/200/200'">
-            <div class="maker-name">Aspired Dr. Ismail Mugisha</div>
-            <div class="maker-role">Scientist</div>
-          </div>  
-                <img src="Images/about us copy.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
-                <img src="Images/a but me.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
-                <img src="Images/MINE.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
-                <img src="Images/calendar.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
-                <img src="Images/Diseases.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
-            <p style="font-size:1.1rem; margin-bottom:1rem;">
+                <i class="fas fa-seedling"></i> Project Champions · Eat & Beat Deficiency <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="big-makers-row">
+                <div class="big-maker-card">
+                    <img class="big-img" src="ronald.png" alt="Tr Musasire Ronald" onerror="this.src='https://picsum.photos/id/64/200/200'">
+                    <div class="maker-name">Tr Musasire Ronald</div>
+                    <div class="maker-role">Club Patron</div>
+                </div>
+                <div class="big-maker-card">
+                    <img class="big-img" src="Julius.png" alt="Mulema Julius" onerror="this.src='https://picsum.photos/id/91/200/200'">
+                    <div class="maker-name">Mulema Julius</div>
+                    <div class="maker-role">Graphic Designer</div>
+                </div>
+                <div class="big-maker-card">
+                    <img class="big-img" src="ismail.png" alt="Dr Ismail Mugisha" onerror="this.src='https://picsum.photos/id/29/200/200'">
+                    <div class="maker-name">Aspired Dr. Ismail Mugisha</div>
+                    <div class="maker-role">Scientist</div>
+                </div>
+            </div>
+            <div class="neumorph-card">
+                <img src="about us copy.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <img src="a but me.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <img src="MINE.png" style="width:100%; border-radius: var(--radius); margin: 1rem 0;" alt="About Us" loading="lazy">
+                <p style="font-size:1.1rem; margin-bottom:1rem;">
                     Many people suffer from diseases such as <strong>Goiter, Anemia, Osteoporosis, Scurvy, Rickets,
                     Obesity, and Diabetes</strong> because of inadequate intake of essential nutrients. Through this project,
                     we provide accurate scientific information, recommended foods, prevention strategies, and health
                     awareness campaigns to help communities improve their well-being.
                 </p>
-
                 <div class="attack-badge" style="display:block; text-align:center; margin:1rem 0;">
                     <i class="fas fa-biohazard"></i> How deficiencies attack: metabolic disruption, hormonal chaos,
                     bone fragility — reversed with targeted whole-food &amp; nutraceuticals.
                 </div>
-
                 <p>
                     Founded by clinical nutritionists and endocrinologists, our platform provides
                     <strong>personalized dietary interventions</strong> for nutrient deficiency diseases.
@@ -1376,12 +1431,10 @@
                     osteoporosis, anemia, scurvy, and more. Through community training and free nutritional toolkits,
                     we've impacted over 30,000 lives since 2024.
                 </p>
-
                 <div class="neumorph-inset" style="margin-top:1.5rem; padding:1.2rem;">
                     <i class="fas fa-seedling" style="color:var(--primary);"></i>
                     <strong>Our Vision:</strong> A deficiency-free world where food is first-line therapy.
                 </div>
-
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:1.5rem; margin-top:1.5rem;">
                     <div style="text-align:center; padding:1rem; background:#f8fafc; border-radius:var(--radius-sm);">
                         <i class="fas fa-users" style="font-size:2.5rem; color:var(--primary-light);"></i>
@@ -1399,383 +1452,345 @@
                         <p>Food Protocols</p>
                     </div>
                 </div>
-
-                <img src="Images/about-team.jpg" style="width:100%; border-radius: var(--radius); margin-top:1.5rem;" alt="Team" loading="lazy">
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: DIABETES
+        PAGE: DIABETES - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-diabetes" class="page">
             <div class="neumorph-card">
                 <h2><i class="fas fa-droplet" style="color:#8e44ad;"></i> Diabetes Mellitus &amp; Diabetes Insipidus</h2>
-
                 <div class="disease-grid">
-                    <!-- Type 1 & 2 Mellitus -->
                     <div class="disease-card disease-diabetes">
-                        <img class="card-image" src="Images/melitus.jpg" alt="Diabetes Mellitus" loading="lazy">
+                        <img class="card-image" src="melitus.jpg" alt="Diabetes Mellitus" loading="lazy">
                         <h3>Type 1 &amp; 2 Mellitus</h3>
                         <p><strong>Causes:</strong> Insulin deficiency (Type 1) or insulin resistance (Type 2).</p>
                         <p><strong>Symptoms:</strong> Excessive thirst, frequent urination, fatigue, blurred vision.</p>
                         <h4>🥗 Recommended Foods:</h4>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-leafy.jpg" alt="Leafy Greens"> Leafy Greens (Spinach, Kale)</li>
-                            <li><img class="food-icon" src="Images/food-berries.jpg" alt="Berries"> Berries (Blueberries, Strawberries)</li>
-                            <li><img class="food-icon" src="Images/food-wholegrains.jpg" alt="Whole Grains"> Whole Grains (Oats, Quinoa)</li>
-                            <li><img class="food-icon" src="Images/food-cinnamon.jpg" alt="Cinnamon"> Cinnamon (Helps regulate blood sugar)</li>
-                            <li><img class="food-icon" src="Images/food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Chickpeas)</li>
+                            <li><img class="food-icon" src="food-leafy.jpg" alt="Leafy Greens"> Leafy Greens (Spinach, Kale)</li>
+                            <li><img class="food-icon" src="food-berries.jpg" alt="Berries"> Berries (Blueberries, Strawberries)</li>
+                            <li><img class="food-icon" src="food-wholegrains.jpg" alt="Whole Grains"> Whole Grains (Oats, Quinoa)</li>
+                            <li><img class="food-icon" src="food-cinnamon.jpg" alt="Cinnamon"> Cinnamon (Helps regulate blood sugar)</li>
+                            <li><img class="food-icon" src="food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Chickpeas)</li>
                         </ul>
                         <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplements: Chromium, Alpha-Lipoic Acid, Magnesium</div>
-                        <div class="attack-badge">⚡ Attack: Insulin deficiency/resistance → high glucose → organ damage (kidneys, eyes, nerves).</div>
+                        <div class="attack-badge">⚡ Attack: Insulin deficiency/resistance → high glucose → organ damage.</div>
                     </div>
-
-                    <!-- Diabetes Insipidus -->
                     <div class="disease-card disease-diabetes">
-                        <img class="card-image" src="Images/download (2).jpg" alt="Diabetes Insipidus" loading="lazy">
+                        <img class="card-image" src="download (2).jpg" alt="Diabetes Insipidus" loading="lazy">
                         <h3>Diabetes Insipidus</h3>
                         <p><strong>Causes:</strong> ADH (antidiuretic hormone) deficiency or kidney resistance to ADH.</p>
                         <p><strong>Symptoms:</strong> Extreme thirst, excessive dilute urine, dehydration.</p>
                         <h4>💧 Recommended Foods &amp; Hydration:</h4>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-cucumber.jpg" alt="Cucumber"> Cucumber (High water content)</li>
-                            <li><img class="food-icon" src="Images/food-melon.jpg" alt="Melon"> Melon (Watermelon, Cantaloupe)</li>
-                            <li><img class="food-icon" src="Images/food-broth.jpg" alt="Broth"> Low-sodium broths</li>
-                            <li><img class="food-icon" src="Images/food-coconut.jpg" alt="Coconut Water"> Coconut Water (Natural electrolytes)</li>
+                            <li><img class="food-icon" src="food-cucumber.jpg" alt="Cucumber"> Cucumber (High water content)</li>
+                            <li><img class="food-icon" src="food-melon.jpg" alt="Melon"> Melon (Watermelon, Cantaloupe)</li>
+                            <li><img class="food-icon" src="food-broth.jpg" alt="Broth"> Low-sodium broths</li>
+                            <li><img class="food-icon" src="food-coconut.jpg" alt="Coconut Water"> Coconut Water (Natural electrolytes)</li>
                         </ul>
                         <div class="supplement-tag"><i class="fas fa-tint"></i> Electrolyte support + Desmopressin (medical treatment)</div>
-                        <div class="attack-badge">💧 ADH deficiency → kidneys cannot retain water → severe dehydration and electrolyte imbalance.</div>
+                        <div class="attack-badge">💧 ADH deficiency → kidneys cannot retain water → severe dehydration.</div>
                     </div>
-                </div>
-
-                <div class="neumorph-inset" style="margin-top:1.5rem; padding:1.2rem;">
-                    <h4><i class="fas fa-info-circle"></i> Prevention &amp; Management Tips</h4>
-                    <ul style="list-style:none; padding:0;">
-                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
-                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
-                            Monitor blood glucose regularly
-                        </li>
-                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
-                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
-                            Maintain a balanced diet with low glycemic index foods
-                        </li>
-                        <li style="padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05);">
-                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
-                            Stay hydrated and exercise regularly
-                        </li>
-                        <li style="padding:0.5rem 0;">
-                            <i class="fas fa-check-circle" style="color:var(--primary);"></i>
-                            Take medications as prescribed by your doctor
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: GOITER
+        PAGE: GOITER - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-goiter" class="page">
             <div class="neumorph-card disease-goiter" style="border-left:8px solid #e67e22;">
                 <h2><i class="fas fa-thyroid" style="color:#e67e22;"></i> GOITER: Iodine Deficiency &amp; Thyroid Enlargement</h2>
-
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Goiter occurs when the thyroid gland enlarges due to lack of iodine, or autoimmune issues.
-                            Our <strong>dedicated protocol</strong> focuses on iodine-rich marine foods, selenium,
-                            and zinc for hormone synthesis.
-                        </p>
-
+                        <p>Goiter occurs when the thyroid gland enlarges due to lack of iodine, or autoimmune issues.</p>
                         <h3>🥗 Recommended Foods:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-seaweed.jpg" alt="Seaweed"> Seaweed / Kelp (High iodine)</li>
-                            <li><img class="food-icon" src="Images/food-fish.jpg" alt="Fish"> Wild-caught fish (Cod, Tuna)</li>
-                            <li><img class="food-icon" src="Images/food-shrimp.jpg" alt="Shrimp"> Shrimp and other shellfish</li>
-                            <li><img class="food-icon" src="Images/food-eggs.jpg" alt="Eggs"> Eggs &amp; Brazil nuts (Selenium)</li>
-                            <li><img class="food-icon" src="Images/food-iodized-salt.jpg" alt="Iodized Salt"> Iodized salt (Daily small amount)</li>
-                            <li><img class="food-icon" src="Images/food-dairy.jpg" alt="Dairy"> Dairy products (Milk, Yogurt)</li>
+                            <li><img class="food-icon" src="food-seaweed.jpg" alt="Seaweed"> Seaweed / Kelp (High iodine)</li>
+                            <li><img class="food-icon" src="food-fish.jpg" alt="Fish"> Wild-caught fish (Cod, Tuna)</li>
+                            <li><img class="food-icon" src="food-shrimp.jpg" alt="Shrimp"> Shrimp and other shellfish</li>
+                            <li><img class="food-icon" src="food-eggs.jpg" alt="Eggs"> Eggs &amp; Brazil nuts (Selenium)</li>
+                            <li><img class="food-icon" src="food-iodized-salt.jpg" alt="Iodized Salt"> Iodized salt (Daily small amount)</li>
+                            <li><img class="food-icon" src="food-dairy.jpg" alt="Dairy"> Dairy products (Milk, Yogurt)</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-pills"></i> Supplementary Eradication: Potassium iodide (under supervision), Selenium methionine, L-tyrosine</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            ⚠️ How it attacks: Iodine deficit → low T3/T4 → high TSH → thyroid grows →
-                            neck swelling &amp; metabolic disturbances.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-pills"></i> Supplementary: Potassium iodide, Selenium methionine, L-tyrosine</div>
+                        <div class="attack-badge">⚠️ Iodine deficit → low T3/T4 → high TSH → thyroid grows.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/images.jpg" alt="Goiter Visual" loading="lazy">
-                        <div style="margin-top:1rem; background:#fef9f0; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Key Facts</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Iodine is essential for thyroid hormone production</li>
-                                <li>🔹 Selenium helps convert T4 to active T3 hormone</li>
-                                <li>🔹 Goiter is preventable with adequate iodine intake</li>
-                                <li>🔹 Salt iodization programs have reduced goiter globally</li>
-                            </ul>
-                        </div>
+                        <img src="images.jpg" alt="Goiter Visual" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: OSTEOPOROSIS
+        PAGE: OSTEOPOROSIS - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-osteoporosis" class="page">
             <div class="neumorph-card disease-osteo" style="border-left:8px solid #2c7da0;">
                 <h2><i class="fas fa-bone" style="color:#2c7da0;"></i> OSTEOPOROSIS: Silent Bone Thinning</h2>
-
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Nutrient deficiency (Calcium, Vitamin D, K2, Magnesium) accelerates bone resorption.
-                            Our unique anti-osteoporosis plan rebuilds density and prevents fractures.
-                        </p>
-
+                        <p>Nutrient deficiency (Calcium, Vitamin D, K2, Magnesium) accelerates bone resorption.</p>
                         <h3>🥛 Recommended Foods:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-dairy.jpg" alt="Dairy"> Dairy (Yogurt, Cheese, Milk) – Calcium rich</li>
-                            <li><img class="food-icon" src="Images/food-kale.jpg" alt="Kale"> Kale, Collard greens (K2, Magnesium)</li>
-                            <li><img class="food-icon" src="Images/food-salmon.jpg" alt="Salmon"> Salmon &amp; Sardines (Vitamin D)</li>
-                            <li><img class="food-icon" src="Images/food-almonds.jpg" alt="Almonds"> Almonds, Sesame seeds</li>
-                            <li><img class="food-icon" src="Images/food-tofu.jpg" alt="Tofu"> Tofu (Calcium-fortified)</li>
-                            <li><img class="food-icon" src="Images/food-orange.jpg" alt="Orange"> Oranges (Vitamin C for collagen)</li>
+                            <li><img class="food-icon" src="food-dairy.jpg" alt="Dairy"> Dairy (Yogurt, Cheese, Milk)</li>
+                            <li><img class="food-icon" src="food-kale.jpg" alt="Kale"> Kale, Collard greens (K2, Magnesium)</li>
+                            <li><img class="food-icon" src="food-salmon.jpg" alt="Salmon"> Salmon &amp; Sardines (Vitamin D)</li>
+                            <li><img class="food-icon" src="food-almonds.jpg" alt="Almonds"> Almonds, Sesame seeds</li>
+                            <li><img class="food-icon" src="food-tofu.jpg" alt="Tofu"> Tofu (Calcium-fortified)</li>
+                            <li><img class="food-icon" src="food-orange.jpg" alt="Orange"> Oranges (Vitamin C for collagen)</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Calcium citrate, Vitamin D3 (2000 IU), K2 MK-7, Boron, Magnesium glycinate</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            🏹 How osteoporosis attacks: Demineralization → porous bones → fragility fractures &amp; height loss.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Calcium citrate, Vitamin D3, K2 MK-7, Boron</div>
+                        <div class="attack-badge">🏹 Demineralization → porous bones → fragility fractures.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/images (1).jpg" alt="Osteoporosis Bone" loading="lazy">
-                        <div style="margin-top:1rem; background:#f0f8fc; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Risk Factors</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Age (especially post-menopausal women)</li>
-                                <li>🔹 Low calcium and Vitamin D intake</li>
-                                <li>🔹 Sedentary lifestyle</li>
-                                <li>🔹 Family history of osteoporosis</li>
-                                <li>🔹 Smoking and excessive alcohol</li>
-                            </ul>
-                        </div>
+                        <img src="images (1).jpg" alt="Osteoporosis Bone" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: ANAEMIA
+        PAGE: ANEMIA - FIXED IMAGE PATHS
         ======================================== -->
-        <div id="page-anaemia" class="page">
-            <div class="neumorph-card disease-anaemia" style="border-left:8px solid #c44536;">
-                <h2><i class="fas fa-tint" style="color:#c44536;"></i> IRON-DEFICIENCY ANAEMIA</h2>
-
+        <div id="page-anemia" class="page">
+            <div class="neumorph-card disease-anemia" style="border-left:8px solid #c44536;">
+                <h2><i class="fas fa-tint" style="color:#c44536;"></i> IRON-DEFICIENCY ANEMIA</h2>
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Anaemia occurs when the body doesn't have enough healthy red blood cells to carry
-                            adequate oxygen to tissues. Iron-deficiency anaemia is the most common type,
-                            caused by insufficient iron intake or absorption.
-                        </p>
-
-                        <p><strong>Symptoms:</strong> Fatigue, weakness, pale skin, shortness of breath,
-                        dizziness, cold hands and feet.</p>
-
+                        <p>Anemia occurs when the body doesn't have enough healthy red blood cells to carry oxygen.</p>
                         <h3>🥩 Recommended Foods:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-red-meat.jpg" alt="Red Meat"> Red meat (Beef, Lamb) – Heme iron</li>
-                            <li><img class="food-icon" src="Images/food-liver.jpg" alt="Liver"> Liver (Organ meat – high iron)</li>
-                            <li><img class="food-icon" src="Images/food-spinach.jpg" alt="Spinach"> Spinach and dark leafy greens</li>
-                            <li><img class="food-icon" src="Images/food-lentils.jpg" alt="Lentils"> Lentils, Beans, Chickpeas</li>
-                            <li><img class="food-icon" src="Images/food-fortified-cereal.jpg" alt="Fortified Cereal"> Fortified cereals</li>
-                            <li><img class="food-icon" src="Images/food-citrus.jpg" alt="Citrus"> Citrus fruits (Vitamin C for absorption)</li>
-                            <li><img class="food-icon" src="Images/food-pumpkin-seeds.jpg" alt="Pumpkin Seeds"> Pumpkin seeds</li>
+                            <li><img class="food-icon" src="food-red-meat.jpg" alt="Red Meat"> Red meat (Beef, Lamb)</li>
+                            <li><img class="food-icon" src="food-liver.jpg" alt="Liver"> Liver (Organ meat – high iron)</li>
+                            <li><img class="food-icon" src="food-spinach.jpg" alt="Spinach"> Spinach and dark leafy greens</li>
+                            <li><img class="food-icon" src="food-lentils.jpg" alt="Lentils"> Lentils, Beans, Chickpeas</li>
+                            <li><img class="food-icon" src="food-citrus.jpg" alt="Citrus"> Citrus fruits (Vitamin C for absorption)</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Ferrous bisglycinate + Vitamin C (for better absorption)</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            ⚡ How anaemia attacks: Fatigue, pallor, breathlessness due to low hemoglobin &amp; iron depletion.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Ferrous bisglycinate + Vitamin C</div>
+                        <div class="attack-badge">⚡ Fatigue, pallor, breathlessness due to low hemoglobin.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/anaemia.jpg" alt="Anaemia Blood" loading="lazy">
-                        <div style="margin-top:1rem; background:#fef5f3; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Prevention Tips</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Eat iron-rich foods with Vitamin C</li>
-                                <li>🔹 Avoid tea/coffee with meals (blocks iron absorption)</li>
-                                <li>🔹 Include heme iron sources (animal products)</li>
-                                <li>🔹 Get regular blood tests to monitor levels</li>
-                            </ul>
-                        </div>
+                        <img src="anaemia.jpg" alt="Anemia Blood" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: SCURVY
+        PAGE: SCURVY - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-scurvy" class="page">
             <div class="neumorph-card disease-scurvy" style="border-left:8px solid #e9b35f;">
                 <h2><i class="fas fa-vitamin-c" style="color:#e9b35f;"></i> SCURVY: Vitamin C Deficiency</h2>
-
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Scurvy is a disease caused by severe and prolonged deficiency of Vitamin C (ascorbic acid).
-                            It affects collagen synthesis, leading to weakened blood vessels, poor wound healing,
-                            and gum disease.
-                        </p>
-
-                        <p><strong>Symptoms:</strong> Fatigue, swollen bleeding gums, joint pain, poor wound healing,
-                        bruising easily, anemia.</p>
-
+                        <p>Scurvy is caused by severe and prolonged deficiency of Vitamin C (ascorbic acid).</p>
                         <h3>🍊 Recommended Foods:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-orange.jpg" alt="Orange"> Oranges and Citrus fruits</li>
-                            <li><img class="food-icon" src="Images/food-kiwi.jpg" alt="Kiwi"> Kiwi fruit</li>
-                            <li><img class="food-icon" src="Images/food-strawberry.jpg" alt="Strawberry"> Strawberries</li>
-                            <li><img class="food-icon" src="Images/food-bell-pepper.jpg" alt="Bell Pepper"> Bell peppers (Red &amp; Green)</li>
-                            <li><img class="food-icon" src="Images/food-broccoli.jpg" alt="Broccoli"> Broccoli</li>
-                            <li><img class="food-icon" src="Images/food-guava.jpg" alt="Guava"> Guava</li>
-                            <li><img class="food-icon" src="Images/food-tomato.jpg" alt="Tomato"> Tomatoes</li>
+                            <li><img class="food-icon" src="food-orange.jpg" alt="Orange"> Oranges and Citrus fruits</li>
+                            <li><img class="food-icon" src="food-kiwi.jpg" alt="Kiwi"> Kiwi fruit</li>
+                            <li><img class="food-icon" src="food-strawberry.jpg" alt="Strawberry"> Strawberries</li>
+                            <li><img class="food-icon" src="food-bell-pepper.jpg" alt="Bell Pepper"> Bell peppers</li>
+                            <li><img class="food-icon" src="food-broccoli.jpg" alt="Broccoli"> Broccoli</li>
+                            <li><img class="food-icon" src="food-guava.jpg" alt="Guava"> Guava</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin C (500-1000 mg daily) until symptoms resolve</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            ⚠️ How scurvy attacks: Vitamin C deficiency → impaired collagen production →
-                            bleeding gums, joint pain, poor wound healing.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin C (500-1000 mg daily)</div>
+                        <div class="attack-badge">⚠️ Vitamin C deficiency → impaired collagen → bleeding gums, joint pain.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/maxresdefault.jpg" alt="Scurvy" loading="lazy">
-                        <div style="margin-top:1rem; background:#fffaf0; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Quick Facts</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Vitamin C is essential for collagen production</li>
-                                <li>🔹 Humans cannot synthesize Vitamin C</li>
-                                <li>🔹 Scurvy was common among sailors (lack of fresh produce)</li>
-                                <li>🔹 Symptoms improve within days of Vitamin C intake</li>
-                            </ul>
-                        </div>
+                        <img src="maxresdefault.jpg" alt="Scurvy" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: RICKETS
+        PAGE: RICKETS - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-rickets" class="page">
             <div class="neumorph-card" style="border-left:8px solid #2ecc71;">
-                <h2><i class="fas fa-baby" style="color:#2ecc71;"></i> RICKETS: Vitamin D &amp; Calcium Deficiency in Children</h2>
-
+                <h2><i class="fas fa-baby" style="color:#2ecc71;"></i> RICKETS: Vitamin D &amp; Calcium Deficiency</h2>
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Rickets is a condition that affects bone development in children, caused by
-                            Vitamin D, calcium, or phosphate deficiency. It leads to soft, weak bones
-                            and skeletal deformities.
-                        </p>
-
-                        <p><strong>Symptoms:</strong> Delayed growth, bowed legs, knock knees, soft skull bones,
-                        muscle weakness, bone pain.</p>
-
+                        <p>Rickets affects bone development in children, caused by Vitamin D, calcium, or phosphate deficiency.</p>
                         <h3>🌞 Recommended Foods &amp; Sunlight:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="images/food-fish.jpg" alt="Fish"> Fatty fish (Salmon, Mackerel)</li>
-                            <li><img class="food-icon" src="images/food-eggs.jpg" alt="Eggs"> Egg yolks</li>
-                            <li><img class="food-icon" src="images/food-dairy.jpg" alt="Dairy"> Fortified dairy products (Milk, Yogurt)</li>
-                            <li><img class="food-icon" src="images/food-cereal.jpg" alt="Cereal"> Fortified cereals</li>
-                            <li><img class="food-icon" src="images/food-mushroom.jpg" alt="Mushroom"> Mushrooms (Sun-exposed)</li>
-                            <li><img class="food-icon" src="images/food-sunlight.jpg" alt="Sunlight"> <strong>Sunlight exposure</strong> (15-30 minutes daily)</li>
+                            <li><img class="food-icon" src="food-fish.jpg" alt="Fish"> Fatty fish (Salmon, Mackerel)</li>
+                            <li><img class="food-icon" src="food-eggs.jpg" alt="Eggs"> Egg yolks</li>
+                            <li><img class="food-icon" src="food-dairy.jpg" alt="Dairy"> Fortified dairy products</li>
+                            <li><img class="food-icon" src="food-mushroom.jpg" alt="Mushroom"> Mushrooms (Sun-exposed)</li>
+                            <li><img class="food-icon" src="food-sunlight.jpg" alt="Sunlight"> <strong>Sunlight exposure</strong> (15-30 minutes daily)</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin D3 drops (400-1000 IU daily), Calcium supplements</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            🦴 How rickets attacks: Vitamin D deficiency → impaired calcium absorption →
-                            soft bones → skeletal deformities and growth problems.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplementary: Vitamin D3 drops, Calcium supplements</div>
+                        <div class="attack-badge">🦴 Vitamin D deficiency → impaired calcium absorption → soft bones.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/rickets.webp" alt="Rickets" loading="lazy">
-                        <div style="margin-top:1rem; background:#f0faf4; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Prevention Tips</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Ensure adequate sunlight exposure</li>
-                                <li>🔹 Include Vitamin D rich foods in diet</li>
-                                <li>🔹 Breastfed infants may need supplements</li>
-                                <li>🔹 Regular check-ups to monitor growth</li>
-                            </ul>
-                        </div>
+                        <img src="rickets.webp" alt="Rickets" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ========================================
-        PAGE: OBESITY
+        PAGE: OBESITY - FIXED IMAGE PATHS
         ======================================== -->
         <div id="page-obesity" class="page">
             <div class="neumorph-card" style="border-left:8px solid #e74c3c;">
-                <h2><i class="fas fa-weight" style="color:#e74c3c;"></i> OBESITY: Nutritional Imbalance &amp; Lifestyle Factors</h2>
-
+                <h2><i class="fas fa-weight" style="color:#e74c3c;"></i> OBESITY: Nutritional Imbalance</h2>
                 <div class="disease-detail">
                     <div class="content">
-                        <p>
-                            Obesity is a complex condition characterized by excessive body fat, often caused by
-                            an energy imbalance where calorie intake exceeds energy expenditure. It's linked
-                            to poor nutrition, lack of physical activity, and genetic factors.
-                        </p>
-
-                        <p><strong>Health Risks:</strong> Type 2 diabetes, heart disease, hypertension, stroke,
-                        certain cancers, sleep apnea, joint problems.</p>
-
+                        <p>Obesity is characterized by excessive body fat, caused by energy imbalance and poor nutrition.</p>
                         <h3>🥗 Recommended Foods for Healthy Weight:</h3>
                         <ul class="food-list">
-                            <li><img class="food-icon" src="Images/food-leafy.jpg" alt="Leafy Greens"> Leafy greens (Low calorie, high fiber)</li>
-                            <li><img class="food-icon" src="Images/food-wholegrains.jpg" alt="Whole Grains"> Whole grains (Oats, Brown rice, Quinoa)</li>
-                            <li><img class="food-icon" src="Images/food-lean-protein.jpg" alt="Lean Protein"> Lean proteins (Chicken, Fish, Tofu)</li>
-                            <li><img class="food-icon" src="Images/food-berries.jpg" alt="Berries"> Berries (Low sugar, high antioxidants)</li>
-                            <li><img class="food-icon" src="Images/food-nuts.jpg" alt="Nuts"> Nuts and seeds (In moderation)</li>
-                            <li><img class="food-icon" src="Images/food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Beans)</li>
-                            <li><img class="food-icon" src="Images/food-water.jpg" alt="Water"> Water (Stay hydrated)</li>
+                            <li><img class="food-icon" src="food-leafy.jpg" alt="Leafy Greens"> Leafy greens (Low calorie, high fiber)</li>
+                            <li><img class="food-icon" src="food-wholegrains.jpg" alt="Whole Grains"> Whole grains (Oats, Brown rice, Quinoa)</li>
+                            <li><img class="food-icon" src="food-lean-protein.jpg" alt="Lean Protein"> Lean proteins (Chicken, Fish, Tofu)</li>
+                            <li><img class="food-icon" src="food-berries.jpg" alt="Berries"> Berries (Low sugar, high antioxidants)</li>
+                            <li><img class="food-icon" src="food-nuts.jpg" alt="Nuts"> Nuts and seeds (In moderation)</li>
+                            <li><img class="food-icon" src="food-legumes.jpg" alt="Legumes"> Legumes (Lentils, Beans)</li>
+                            <li><img class="food-icon" src="food-water.jpg" alt="Water"> Water (Stay hydrated)</li>
                         </ul>
-
-                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplements: Omega-3 fatty acids, Vitamin D, Fiber supplements</div>
-
-                        <div class="attack-badge" style="display:block; margin-top:1rem;">
-                            ⚠️ How obesity attacks: Excess calories → fat accumulation → inflammation →
-                            insulin resistance → chronic disease.
-                        </div>
+                        <div class="supplement-tag"><i class="fas fa-capsules"></i> Supplements: Omega-3, Vitamin D, Fiber</div>
+                        <div class="attack-badge">⚠️ Excess calories → fat accumulation → insulin resistance → chronic disease.</div>
                     </div>
                     <div class="image-side">
-                        <img src="Images/obesity.jpg" alt="Obesity" loading="lazy">
-                        <div style="margin-top:1rem; background:#fef5f3; padding:1rem; border-radius:var(--radius-sm);">
-                            <h4><i class="fas fa-clipboard-list"></i> Management Tips</h4>
-                            <ul style="list-style:none; padding:0;">
-                                <li>🔹 Balanced diet with portion control</li>
-                                <li>🔹 Regular physical activity (150+ minutes/week)</li>
-                                <li>🔹 Adequate sleep and stress management</li>
-                                <li>🔹 Monitor weight and seek professional guidance</li>
-                                <p>How we determine aaperson with Obesity</p>
-                                <li> By using a body mass index</li>
-                                <li> By calculating weight ratio</li>
-                                 <li> Body Fat Percentage</li>
-                                 <li> Waist-to-Height Ratio</li>
-                                 <li>Waist Circumference</li
-                  <p>All these recommended foods are availabel in health centres for free</p>
-                            </ul>
-                        </div>
+                        <img src="obesity.jpg" alt="Obesity" loading="lazy">
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+        PAGE: SHOP (Monetization)
+        ======================================== -->
+        <div id="page-shop" class="page">
+            <div class="neumorph-card">
+                <h2><i class="fas fa-shopping-cart" style="color:var(--primary);"></i> Premium Nutrition Shop</h2>
+                <p style="margin-bottom:1.5rem;">
+                    Support our non-profit mission and get evidence-based nutrition resources to beat deficiencies.
+                    Every purchase helps us reach more schools and communities.
+                </p>
+
+                <h4 class="neumorph-inset section-title" style="margin-bottom:1.5rem;">
+                    <i class="fas fa-crown"></i> Premium Resources
+                </h4>
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-file-pdf"></i></div>
+                        <h4>Complete Deficiency Guide</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">120-page PDF with meal plans, recipes, and supplement guides.</p>
+                        <div class="price">$12.99</div>
+                        <button class="btn-buy" onclick="handlePurchase('Complete Deficiency Guide', '12.99')">
+                            <i class="fas fa-lock"></i> Buy Now
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <h4>30-Day Meal Planner</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">Printable planner with daily meals, grocery lists, and tracking.</p>
+                        <div class="price">$7.99</div>
+                        <button class="btn-buy" onclick="handlePurchase('30-Day Meal Planner', '7.99')">
+                            <i class="fas fa-lock"></i> Buy Now
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-video"></i></div>
+                        <h4>Video Masterclass</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">5-part video series on clinical nutrition and deficiency reversal.</p>
+                        <div class="price">$19.99</div>
+                        <button class="btn-buy" onclick="handlePurchase('Video Masterclass', '19.99')">
+                            <i class="fas fa-lock"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <h4 class="neumorph-inset section-title" style="margin-top:2rem; margin-bottom:1.5rem;">
+                    <i class="fas fa-link"></i> Recommended Supplements (Affiliate)
+                </h4>
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-capsules"></i></div>
+                        <h4>Iron + Vitamin C Complex</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">High-quality iron supplement with Vitamin C for absorption.</p>
+                        <div class="price">$24.99</div>
+                        <button class="btn-buy amazon" onclick="window.open('https://amzn.to/3XyzABC', '_blank')">
+                            <i class="fab fa-amazon"></i> Buy on Amazon
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-sun"></i></div>
+                        <h4>Vitamin D3 + K2 Drops</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">Essential for bone health and immune function.</p>
+                        <div class="price">$18.50</div>
+                        <button class="btn-buy amazon" onclick="window.open('https://amzn.to/3XyzDEF', '_blank')">
+                            <i class="fab fa-amazon"></i> Buy on Amazon
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-fish"></i></div>
+                        <h4>Omega-3 Fish Oil</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">High EPA/DHA for brain health, inflammation, and heart.</p>
+                        <div class="price">$22.99</div>
+                        <button class="btn-buy amazon" onclick="window.open('https://amzn.to/3XyzGHI', '_blank')">
+                            <i class="fab fa-amazon"></i> Buy on Amazon
+                        </button>
+                    </div>
+                </div>
+
+                <h4 class="neumorph-inset section-title" style="margin-top:2rem; margin-bottom:1.5rem;">
+                    <i class="fas fa-heart" style="color:#e74c3c;"></i> Support Our Non-Profit
+                </h4>
+                <div class="shop-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-hand-holding-heart" style="color:#e74c3c;"></i></div>
+                        <h4>Donate $10</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">Provides 10 nutrition booklets to schools.</p>
+                        <div class="price">$10.00</div>
+                        <button class="btn-buy donate" onclick="handlePurchase('Donation $10', '10.00')">
+                            <i class="fas fa-heart"></i> Donate Now
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-hands-helping" style="color:#e74c3c;"></i></div>
+                        <h4>Donate $25</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">Supports a community nutrition workshop.</p>
+                        <div class="price">$25.00</div>
+                        <button class="btn-buy donate" onclick="handlePurchase('Donation $25', '25.00')">
+                            <i class="fas fa-heart"></i> Donate Now
+                        </button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-icon"><i class="fas fa-gift" style="color:#e74c3c;"></i></div>
+                        <h4>Donate $50</h4>
+                        <p style="font-size:0.85rem; color:#5a6a6a;">Funds a full deficiency screening camp.</p>
+                        <div class="price">$50.00</div>
+                        <button class="btn-buy donate" onclick="handlePurchase('Donation $50', '50.00')">
+                            <i class="fas fa-heart"></i> Donate Now
+                        </button>
+                    </div>
+                </div>
+
+                <h4 class="neumorph-inset section-title" style="margin-top:2rem; margin-bottom:1.5rem;">
+                    <i class="fas fa-calendar-check"></i> Book a Consultation
+                </h4>
+                <div style="background:#f8fafc; border-radius:var(--radius-sm); padding:1.5rem; text-align:center;">
+                    <p style="font-size:1rem; margin-bottom:0.8rem;">
+                        <i class="fas fa-user-md" style="color:var(--primary);"></i>
+                        Get personalized nutrition advice from our club's health experts.
+                    </p>
+                    <p style="font-size:0.9rem; color:#5a6a6a; margin-bottom:1rem;">
+                        30-minute video call • $35
+                    </p>
+                    <button class="btn-primary" onclick="window.open('https://calendly.com/your-schedule', '_blank')">
+                        <i class="fas fa-calendar-plus"></i> Book Now
+                    </button>
+                    <p style="font-size:0.7rem; color:#aaa; margin-top:0.5rem;">
+                        Free for Uganda-based schools and community groups.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1786,7 +1801,6 @@
         <div id="page-resources" class="page">
             <div class="neumorph-card">
                 <h2><i class="fas fa-book" style="color:var(--primary);"></i> Educational Resources</h2>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-file-pdf"></i></div>
                     <div class="content">
@@ -1795,7 +1809,6 @@
                     </div>
                     <button class="btn-download"><i class="fas fa-download"></i> Download</button>
                 </div>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-chart-pie"></i></div>
                     <div class="content">
@@ -1804,7 +1817,6 @@
                     </div>
                     <button class="btn-download"><i class="fas fa-download"></i> Download</button>
                 </div>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-play-circle"></i></div>
                     <div class="content">
@@ -1813,7 +1825,6 @@
                     </div>
                     <button class="btn-download"><i class="fas fa-external-link-alt"></i> Watch</button>
                 </div>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-list-check"></i></div>
                     <div class="content">
@@ -1822,7 +1833,6 @@
                     </div>
                     <button class="btn-download"><i class="fas fa-download"></i> Download</button>
                 </div>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
                     <div class="content">
@@ -1831,7 +1841,6 @@
                     </div>
                     <button class="btn-download"><i class="fas fa-download"></i> Download</button>
                 </div>
-
                 <div class="resource-card">
                     <div class="icon"><i class="fas fa-utensils"></i></div>
                     <div class="content">
@@ -1852,8 +1861,6 @@
                 <p style="margin-bottom:1.5rem;">
                     Have questions or want to get involved? Reach out to us and we'll get back to you as soon as possible.
                 </p>
-
-                <!-- Contact Info -->
                 <div class="contact-info">
                     <div class="info-box">
                         <i class="fas fa-map-marker-alt"></i>
@@ -1863,12 +1870,12 @@
                     <div class="info-box">
                         <i class="fas fa-phone"></i>
                         <h4>Phone</h4>
-                        <p>+256 759019164 <br>+256 771870724</p> <br>+256 764111310</p>
+                        <p>+256 759019164 <br>+256 771870724</p>
                     </div>
                     <div class="info-box">
                         <i class="fas fa-envelope"></i>
                         <h4>Email</h4>
-                        <p>sangas1948@gmail.com<p> 
+                        <p>sangas1948@gmail.com</p>
                     </div>
                     <div class="info-box">
                         <i class="fas fa-clock"></i>
@@ -1876,8 +1883,6 @@
                         <p>Monday - Friday<br>8:00 AM - 5:00 PM</p>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div>
@@ -1889,7 +1894,6 @@
                             <input type="email" id="email" placeholder="Enter your email address" required>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div>
                             <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
@@ -1907,10 +1911,8 @@
                             </select>
                         </div>
                     </div>
-
                     <label for="message"><i class="fas fa-comment"></i> Message</label>
                     <textarea id="message" placeholder="Write your message here..." required></textarea>
-
                     <button type="submit" class="btn-primary">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
@@ -1943,6 +1945,44 @@
 
     </div>
 
+    <!-- ========================================
+    FLOATING CTA BAR
+    ======================================== -->
+    <div class="floating-cta-bar" id="floatingCta">
+        <p><i class="fas fa-gift"></i> Get your FREE Deficiency Report & Meal Plan!</p>
+        <button class="btn-cta" onclick="openPopup()"><i class="fas fa-envelope"></i> Claim Now</button>
+        <button class="btn-cta-secondary" onclick="document.getElementById('page-shop').scrollIntoView({behavior:'smooth'});">
+            <i class="fas fa-shopping-cart"></i> Shop
+        </button>
+    </div>
+
+    <!-- ========================================
+    POPUP
+    ======================================== -->
+    <div class="popup-overlay" id="exitPopup">
+        <div class="popup-box">
+            <button class="close-popup" onclick="closePopup()" aria-label="Close popup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-icon"><i class="fas fa-apple-alt"></i></div>
+            <h3>🎁 Wait! Get Your Free Guide</h3>
+            <p>
+                <strong>Don't leave empty-handed.</strong> Subscribe now and get our <strong>5-Page Deficiency Report</strong>
+                with personalized meal plans and supplement recommendations — <strong>completely free</strong>.
+            </p>
+            <form id="popupForm" onsubmit="submitPopupEmail(event)">
+                <input type="email" id="popupEmail" placeholder="Enter your best email" required>
+                <button type="submit" class="btn-popup">
+                    <i class="fas fa-paper-plane"></i> Send My Free Guide
+                </button>
+            </form>
+            <p class="popup-footnote">We'll never spam you. Unsubscribe anytime.</p>
+            <button class="close-popup-bottom" onclick="closePopup()">
+                <i class="fas fa-times-circle"></i> No thanks, I don't want a free guide
+            </button>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -1955,97 +1995,167 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // ========================================
             // NAVIGATION
-            // ========================================
             const navBtns = document.querySelectorAll('.nav-btn');
             const pages = document.querySelectorAll('.page');
 
             navBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    // Remove active from all buttons
                     navBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-
-                    // Hide all pages
                     pages.forEach(p => p.classList.remove('active-page'));
-
-                    // Show selected page
                     const pageId = 'page-' + this.dataset.page;
                     const targetPage = document.getElementById(pageId);
                     if (targetPage) {
                         targetPage.classList.add('active-page');
-                        // Scroll to top of page
                         targetPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
 
-            // ========================================
             // CONTACT FORM
-            // ========================================
             const contactForm = document.getElementById('contactForm');
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    if (!name || !email || !message) {
+                        showToast('Please fill in all required fields.', 'error');
+                        return;
+                    }
+                    showToast('Thank you! Your message has been sent successfully.', 'success');
+                    this.reset();
+                });
+            }
 
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                // Get form values
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const message = document.getElementById('message').value.trim();
-
-                if (!name || !email || !message) {
-                    showToast('Please fill in all required fields.', 'error');
-                    return;
-                }
-
-                // Simulate sending
-                showToast('Thank you! Your message has been sent successfully.', 'success');
-                this.reset();
-            });
-
-            // ========================================
-            // TOAST NOTIFICATION
-            // ========================================
+            // TOAST
             let toastTimeout;
 
             function showToast(message, type = 'success') {
+                const toast = document.getElementById('toast');
+                const toastMessage = document.getElementById('toastMessage');
+                if (!toast) return;
                 toastMessage.textContent = message;
                 toast.className = 'toast show';
                 toast.style.background = type === 'error' ? '#c44536' : 'var(--primary)';
-
                 clearTimeout(toastTimeout);
                 toastTimeout = setTimeout(() => {
                     toast.classList.remove('show');
                 }, 4000);
             }
 
-            // ========================================
-            // RESOURCE DOWNLOAD BUTTONS
-            // ========================================
+            // RESOURCE DOWNLOAD
             document.querySelectorAll('.btn-download').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    // Get the resource title
                     const title = this.closest('.resource-card').querySelector('h4').textContent;
                     showToast(`Downloading "${title}"... Coming soon!`, 'success');
                 });
             });
 
-            // ========================================
-            // SMOOTH SCROLL FOR INTERNAL LINKS
-            // ========================================
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
+            // INLINE EMAIL
+            const inlineForm = document.getElementById('inlineEmailForm');
+            if (inlineForm) {
+                inlineForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('inlineEmail').value.trim();
+                    if (email) {
+                        showToast('✅ Free guide sent to ' + email + '! Check your inbox.', 'success');
+                        localStorage.setItem('subscriberEmail', email);
+                        this.reset();
+                        closePopup();
                     }
                 });
+            }
+
+            // POPUP FUNCTIONS
+            const popup = document.getElementById('exitPopup');
+
+            window.openPopup = function() {
+                if (popup) {
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    localStorage.setItem('popupShown', 'true');
+                }
+            };
+
+            window.closePopup = function() {
+                if (popup) {
+                    popup.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // Close on overlay click
+            if (popup) {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closePopup();
+                    }
+                });
+            }
+
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+                    closePopup();
+                }
             });
 
+            // POPUP FORM
+            const popupForm = document.getElementById('popupForm');
+            if (popupForm) {
+                popupForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('popupEmail').value.trim();
+                    if (email) {
+                        showToast('✅ Free guide sent to ' + email + '! Check your inbox.', 'success');
+                        localStorage.setItem('subscriberEmail', email);
+                        localStorage.setItem('popupShown', 'true');
+                        closePopup();
+                        this.reset();
+                    }
+                });
+            }
+
+            // POPUP TRIGGERS
+            // After 8 seconds
+            setTimeout(function() {
+                const alreadyShown = localStorage.getItem('popupShown');
+                if (!alreadyShown && popup) {
+                    openPopup();
+                }
+            }, 8000);
+
+            // On scroll
+            let scrollTriggered = false;
+            window.addEventListener('scroll', function() {
+                const alreadyShown = localStorage.getItem('popupShown');
+                if (!alreadyShown && !scrollTriggered && window.scrollY > 600) {
+                    scrollTriggered = true;
+                    setTimeout(openPopup, 1000);
+                }
+            });
+
+            // Exit-intent
+            let exitTriggered = false;
+            document.addEventListener('mouseleave', function(e) {
+                const alreadyShown = localStorage.getItem('popupShown');
+                if (!alreadyShown && !exitTriggered && e.clientY < 0) {
+                    exitTriggered = true;
+                    setTimeout(openPopup, 300);
+                }
+            });
+
+            // SHOP PURCHASE
+            window.handlePurchase = function(product, price) {
+                showToast(`🛒 "${product}" ($${price}) - Checkout coming soon!`, 'success');
+                // Replace with your Stripe link:
+                // window.open('https://buy.stripe.com/your-link', '_blank');
+            };
+
+            console.log('✅ Eat & Beat Deficiency - Fully loaded with fixed image paths!');
         });
     </script>
 
